@@ -102,6 +102,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "the-g-word",
+    title: "The G Word",
+    medium: "In progress",
+    blurb: "A newer, playful piece — photos coming soon.",
+    accent: "pink",
+    inProgress: true,
+    theme: {
+      bg: "#fcd7e0",
+      text: "#013961",
+      textSoft: "#4d7290",
+    },
+    sections: [
+      {
+        type: "intro",
+        body: ["Are you ready to Die?"],
+      },
+    ],
+  },
+
+  {
     slug: "brick-ballet",
     title: "Brick Ballet",
     medium: "Video",

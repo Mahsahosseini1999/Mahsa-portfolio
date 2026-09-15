@@ -123,10 +123,10 @@ const exhibitions = [
 export default function CvPage() {
   return (
     <>
-      <main className="mx-auto w-full max-w-3xl px-5 pt-20 pb-16 sm:px-8">
+      <main className="mx-auto w-full max-w-3xl px-5 pt-24 pb-20 sm:px-8">
         <h1 className="font-display text-[clamp(2.5rem,7vw,4.5rem)]">CV</h1>
 
-        <div className="mt-10">
+        <div className="mt-16">
           <h2 className="font-display text-3xl">Education</h2>
           <div className="mt-6 flex flex-col gap-6">
             {education.map((e) => (
@@ -141,7 +141,7 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <h2 className="font-display text-3xl">Courses</h2>
           <div className="mt-6 flex flex-col gap-4">
             {courses.map((c) => (
@@ -156,7 +156,7 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <h2 className="font-display text-3xl">Training</h2>
           <div className="mt-6 flex flex-col gap-4">
             {training.map((t) => (
@@ -172,7 +172,7 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <h2 className="font-display text-3xl">Experience</h2>
           <div className="mt-6 flex flex-col gap-8">
             {experience.map((e) => (
@@ -203,7 +203,7 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <h2 className="font-display text-3xl">Residency</h2>
           <div className="mt-6 flex flex-col gap-4">
             {residencies.map((r) => (
@@ -219,7 +219,7 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <h2 className="font-display text-3xl">Workshop</h2>
           <div className="mt-6 flex flex-col gap-4">
             {workshops.map((w) => (
@@ -235,7 +235,7 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <h2 className="font-display text-3xl">Exhibitions</h2>
           <p className="mt-1 text-sm text-ink-soft">Group</p>
           <div className="mt-6 flex flex-col gap-5">
