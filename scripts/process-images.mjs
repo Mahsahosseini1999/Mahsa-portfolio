@@ -1,0 +1,106 @@
+import sharp from "sharp";
+import fs from "node:fs";
+import path from "node:path";
+
+const ROOT = path.resolve(import.meta.dirname, "../..");
+const OUT = path.resolve(import.meta.dirname, "../src/assets/work");
+
+const jobs = [
+  {
+    slug: "arc-of-birth",
+    dir: path.join(ROOT, "arc of birth"),
+    files: [
+      "#2.png", "#3.png", "#6.png", "#9.png", "#10.png", "21.png", "26.png",
+      "img5.jpg", "img11.jpg", "img15.jpg", "img19.jpg",
+      "vagina-1.png", "vagina-2.png", "vagina-3a.png", "vagina-3b.png",
+    ],
+  },
+  {
+    slug: "interrelation-tehran",
+    dir: path.join(ROOT, "interrelation", "tehran "),
+    files: ["4.jpg", "A.png", "B.png", "D.png"].concat(
+      fs
+        .readdirSync(path.join(ROOT, "interrelation", "tehran "))
+        .filter((f) => f.toLowerCase().endsWith("e.png"))
+    ).concat(["SDC12652.JPG"]),
+  },
+  {
+    slug: "interrelation-chairs",
+    dir: path.join(ROOT, "interrelation"),
+    files: ["Untitled.png"],
+  },
+  {
+    slug: "interrelation-dance",
+    dir: path.join(ROOT, "interrelation"),
+    files: fs
+      .readdirSync(path.join(ROOT, "interrelation"))
+      .filter((f) => f.toLowerCase().startsWith("screenshot")),
+  },
+  {
+    slug: "people-places-time",
+    dir: path.join(ROOT, "people places time "),
+    files: [
+      "000000010001.jpg",
+      "000000010007.jpg",
+      "000000010008.jpg",
+      "000000010012.jpg",
+      "000000010014.jpg",
+      "000000010016.jpg",
+      "000000010017.jpg",
+      "000000010019.jpg",
+      "000000010022.jpg",
+      "000000010025.jpg",
+    ],
+  },
+  {
+    slug: "brick-ballet",
+    dir: ROOT,
+    files: ["brick ballet.png"],
+  },
+  {
+    slug: "where-it-ends-up",
+    dir: ROOT,
+    files: ["Mahsa_Where it Ends up 2.png"],
+  },
+  {
+    slug: "cable-man",
+    dir: path.join(ROOT, "cable man"),
+    files: (() => {
+      const dir = path.join(ROOT, "cable man");
+      const shots = fs
+        .readdirSync(dir)
+        .filter((f) => f.toLowerCase().startsWith("screenshot"))
+        .map((f) => ({ f, mtime: fs.statSync(path.join(dir, f)).mtimeMs }))
+        .sort((a, b) => b.mtime - a.mtime)
+        .map((x) => x.f);
+      return ["IMG_3474.jpeg", ...shots];
+    })(),
+  },
+];
+
+async function run() {
+  for (const job of jobs) {
+    const outDir = path.join(OUT, job.slug);
+    fs.mkdirSync(outDir, { recursive: true });
+    let i = 0;
+    for (const file of job.files) {
+      i += 1;
+      const src = path.join(job.dir, file);
+      if (!fs.existsSync(src)) {
+        console.warn(`MISSING: ${src}`);
+        continue;
+      }
+      const outPath = path.join(outDir, `${String(i).padStart(2, "0")}.jpg`);
+      await sharp(src)
+        .rotate()
+        .resize({ width: 2200, withoutEnlargement: true })
+        .flatten({ background: "#ffffff" })
+        .jpeg({ quality: 82, mozjpeg: true })
+        .toFile(outPath);
+      const stat = fs.statSync(outPath);
+      console.log(`${job.slug}/${path.basename(outPath)} <- ${file} (${(stat.size / 1024).toFixed(0)}kb)`);
+    }
+  }
+}
+
+run();
