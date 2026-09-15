@@ -1,6 +1,6 @@
 export default function BioSection() {
   return (
-    <section id="about" className="mx-auto w-full max-w-3xl px-6 pb-16 sm:px-10">
+    <section id="about" className="mx-auto w-full max-w-3xl px-5 pb-16 sm:px-8">
       <div className="mx-auto flex max-w-xl flex-col gap-4 text-justify font-display text-lg leading-snug sm:text-xl">
         <p>You have somehow ended up here.</p>
         <p>

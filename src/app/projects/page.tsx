@@ -18,7 +18,7 @@ const accentVar: Record<string, string> = {
 export default function ProjectsPage() {
   return (
     <>
-    <main className="mx-auto w-full max-w-7xl px-6 pt-20 pb-16 sm:px-10">
+    <main className="mx-auto w-full max-w-7xl px-5 pt-20 pb-16 sm:px-8">
       <h1 className="font-display text-[clamp(2.5rem,7vw,4.5rem)]">Projects</h1>
 
       <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">

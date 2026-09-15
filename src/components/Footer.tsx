@@ -14,7 +14,7 @@ export default function Footer() {
   const [noteIndex, setNoteIndex] = useState<number | null>(null);
 
   return (
-    <footer className="relative border-t border-ink/10 bg-paper-deep px-6 py-8 sm:px-10">
+    <footer className="relative border-t border-ink/10 bg-paper-deep px-5 py-8 sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="font-display text-3xl">Mahsa Hosseini</p>

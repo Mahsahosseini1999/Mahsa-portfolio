@@ -105,7 +105,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
       className="w-full min-h-screen overflow-x-hidden pt-20 pb-16"
       style={themeStyle}
     >
-      <div className="mx-auto w-full max-w-4xl px-6 sm:px-10">
+      <div className="mx-auto w-full max-w-4xl px-5 sm:px-8">
       <Link
         href="/projects"
         className="text-sm text-ink-soft hover:text-accent transition-colors"

@@ -8,7 +8,7 @@ export default function Home() {
     <div className="bg-[#d6c9f2]">
       <HomeScene />
       <BioSection />
-      <section className="px-6 pb-16 sm:px-10">
+      <section className="px-5 pb-16 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl sm:text-4xl">Draw something</h2>
           <p className="mt-2 text-sm text-ink-soft">
