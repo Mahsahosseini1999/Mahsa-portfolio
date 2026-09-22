@@ -104,6 +104,20 @@ const jobs = [
         .filter((f) => f.toLowerCase().startsWith("screenshot"))
     ),
   },
+  {
+    slug: "becoming-soil-radaye-siah-whole",
+    dir: path.join(ROOT, "Becoming Soil ", "turbah drawings "),
+    files: ["whole.jpg"],
+  },
+  {
+    slug: "becoming-soil-radaye-siah-drawings",
+    dir: path.join(ROOT, "Becoming Soil ", "turbah drawings "),
+    files: [
+      "img5.png", "img11.png", "img15.png", "img19.png", "img23.png",
+      "img27.png", "img31.png", "img35.png",
+      "IMG_5060-removebg-preview.png", "IMG_5061-removebg-preview.png",
+    ],
+  },
 ];
 
 async function run() {

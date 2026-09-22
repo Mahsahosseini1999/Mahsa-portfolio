@@ -59,6 +59,7 @@ import becomingSoilCover from "@/assets/work/becoming-soil-cover/01.jpg";
 import windWillCarry01 from "@/assets/work/becoming-soil-wind-will-carry/01.jpg";
 import decompostProcess from "@/assets/work/becoming-soil-decompost/01.jpg";
 import decompostStill from "@/assets/work/becoming-soil-decompost/02.jpg";
+import radayeSiahWhole from "@/assets/work/becoming-soil-radaye-siah-whole/01.jpg";
 
 export type Accent = "pink" | "skyblue" | "lavender" | "indigo";
 
@@ -229,6 +230,7 @@ export const projects: Project[] = [
       {
         type: "gallery",
         captionColor: "#013961",
+        size: "sm",
         images: [
           {
             src: windWillCarry01,
@@ -269,7 +271,30 @@ export const projects: Project[] = [
         linkLabel: "Watch De-Compost",
         showPlayIcon: false,
         captionColor: "#013961",
-        caption: "De-compost, microscopic footage video, 2025.",
+        caption: "De-compost, microscopic footage, 2025.",
+      },
+      {
+        type: "heading",
+        title: "Radaye Siah",
+        boxed: false,
+        body: [
+          "The \"turbah\" is a small religious object made of soil, used during prayer. I had been eating turbah since childhood; I loved its taste and smell. I began using it as a drawing material almost accidentally, when I was thinking about what else I could do with it and noticed the marks it left on paper. It worked almost like a dry pastel.",
+          "I began making drawings with it that represent death and mourning, drawing from both Islamic and Christian imagery.",
+          "In Islam, mourning is marked by wearing black for 40 days. To me, each day had a shape, so I made 40 black drawings. I attached them to black fabric and dressed a female mannequin with them.",
+          "It became a practice of daily mourning and daily making.",
+        ],
+      },
+      {
+        type: "gallery",
+        captionColor: "#013961",
+        size: "sm",
+        images: [
+          {
+            src: radayeSiahWhole,
+            alt: "Mannequin dressed in black fabric covered with black drawings for Radaye Siah",
+            caption: "Radaye Siah, 2025. Turbah on black cardboard, linen, turbah. 1.80 × 50 cm.",
+          },
+        ],
       },
     ],
   },
