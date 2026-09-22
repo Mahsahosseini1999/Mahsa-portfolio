@@ -57,6 +57,8 @@ import gun14 from "@/assets/work/the-g-word/14.jpg";
 
 import becomingSoilCover from "@/assets/work/becoming-soil-cover/01.jpg";
 import windWillCarry01 from "@/assets/work/becoming-soil-wind-will-carry/01.jpg";
+import decompostProcess from "@/assets/work/becoming-soil-decompost/01.jpg";
+import decompostStill from "@/assets/work/becoming-soil-decompost/02.jpg";
 
 export type Accent = "pink" | "skyblue" | "lavender" | "indigo";
 
@@ -234,6 +236,40 @@ export const projects: Project[] = [
             caption: "Wind Will Carry, collected autumn leaves, 2024, installation view.",
           },
         ],
+      },
+      {
+        type: "heading",
+        title: "De-Compost",
+        boxed: false,
+        body: [
+          "I started collecting soil from cemeteries in Groningen and brought it back to my studio. I placed small samples under a microscope and photographed what I found.",
+        ],
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: decompostProcess,
+            alt: "Studio setup with a microscope, soil samples in labelled jars, and a laptop showing microscope footage",
+          },
+        ],
+      },
+      {
+        type: "intro",
+        body: [
+          "I was looking for traces of life in the soil, trying to understand what happens to the particles I’ll one day become; what life looks like for them. I added parts of my own body into the soil and watched it all shift, blend, and change over time. I was facing my fear little by little, through curiosity and observation.",
+          "The microscope gave me another way of looking at the material. I was no longer only looking at soil as something that holds the dead, but as a living environment in itself.",
+        ],
+      },
+      {
+        type: "video",
+        still: decompostStill,
+        alt: "Microscopic still from De-Compost",
+        href: "https://youtu.be/js5gvgXz_HM?si=4D5iWRxUSI8GdiPr",
+        linkLabel: "Watch De-Compost",
+        showPlayIcon: false,
+        captionColor: "#013961",
+        caption: "De-compost, microscopic footage video, 2025.",
       },
     ],
   },

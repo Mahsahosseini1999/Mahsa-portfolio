@@ -95,6 +95,15 @@ const jobs = [
     dir: path.join(ROOT, "Becoming Soil "),
     files: ["DSCF1520.jpg"],
   },
+  {
+    slug: "becoming-soil-decompost",
+    dir: path.join(ROOT, "Becoming Soil ", "under the microscope "),
+    files: ["process photo.png"].concat(
+      fs
+        .readdirSync(path.join(ROOT, "Becoming Soil ", "under the microscope "))
+        .filter((f) => f.toLowerCase().startsWith("screenshot"))
+    ),
+  },
 ];
 
 async function run() {
