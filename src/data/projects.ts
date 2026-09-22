@@ -55,6 +55,9 @@ import gun12 from "@/assets/work/the-g-word/12.jpg";
 import gun13 from "@/assets/work/the-g-word/13.jpg";
 import gun14 from "@/assets/work/the-g-word/14.jpg";
 
+import becomingSoilCover from "@/assets/work/becoming-soil-cover/01.jpg";
+import windWillCarry01 from "@/assets/work/becoming-soil-wind-will-carry/01.jpg";
+
 export type Accent = "pink" | "skyblue" | "lavender" | "indigo";
 
 export type Section =
@@ -68,6 +71,7 @@ export type Section =
       panelText?: string;
       lineColor?: string;
       titleColor?: string;
+      poem?: { title: string; lines: string[] };
     }
   | {
       type: "gallery";
@@ -189,17 +193,46 @@ export const projects: Project[] = [
 
   {
     slug: "in-the-ground",
-    title: "In the Ground",
-    medium: "In progress",
-    blurb: "A newer body of work on death, decay, and our relation to nature.",
+    title: "Becoming Soil",
+    medium: "Installation, video, sound, drawing",
+    blurb: "Death, grief, and our relation to nature — in several parts.",
     accent: "lavender",
-    inProgress: true,
+    cover: becomingSoilCover,
+    theme: {
+      bg: "#ffffff",
+      text: "#013961",
+      textSoft: "#4d7290",
+    },
     sections: [
       {
-        type: "intro",
+        type: "heading",
+        title: "Wind Will Carry",
+        boxed: false,
         body: [
-          "A project about death and decay, and our relationship to nature — underway for about a year now.",
-          "Still taking shape. More to come.",
+          "I made this work when I had started researching an idea that had occupied me since childhood: death. Grief was part of this research from the beginning.",
+          "I collected fallen autumn leaves and arranged them on a stone chair outside the exhibition space. Throughout the exhibition, I tended to them and kept the wind from scattering them. At the end, I sat and watched the wind carry them away.",
+          "The leaves became a way of approaching grief through material. Rather than representing loss, I was watching something disappear.",
+        ],
+        poem: {
+          title: "The loss.",
+          lines: [
+            "You wake up and the world is not the same.",
+            "It's gone, and this is the beginning of emptiness.",
+            "It has a way of creeping in, like a shadow. There's no preparation for this moment.",
+            "It feels like a hole is opening up inside, wrapping around you like a heavy blanket.",
+            "You are left to carry on.",
+          ],
+        },
+      },
+      {
+        type: "gallery",
+        captionColor: "#013961",
+        images: [
+          {
+            src: windWillCarry01,
+            alt: "Fallen autumn leaves arranged in a body shape on a stone bench",
+            caption: "Wind Will Carry, collected autumn leaves, 2024, installation view.",
+          },
         ],
       },
     ],

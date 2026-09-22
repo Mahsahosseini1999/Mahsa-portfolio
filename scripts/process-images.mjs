@@ -85,6 +85,16 @@ const jobs = [
       "img48.jpg", "img52.jpg", "img56.jpg", "Untitled design.png",
     ],
   },
+  {
+    slug: "becoming-soil-cover",
+    dir: path.join(ROOT, "Becoming Soil ", "lutous "),
+    files: ["IMG_0909.jpg"],
+  },
+  {
+    slug: "becoming-soil-wind-will-carry",
+    dir: path.join(ROOT, "Becoming Soil "),
+    files: ["DSCF1520.jpg"],
+  },
 ];
 
 async function run() {

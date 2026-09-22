@@ -228,6 +228,25 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                       {p}
                     </p>
                   ))}
+                  {section.poem && (
+                    <div className="mt-4 flex flex-col gap-2">
+                      <p
+                        className="max-w-[72ch] text-xl leading-relaxed"
+                        style={titleColor ? { color: titleColor } : undefined}
+                      >
+                        {section.poem.title}
+                      </p>
+                      {section.poem.lines.map((line, j) => (
+                        <p
+                          key={j}
+                          className="max-w-[72ch] text-lg leading-tight"
+                          style={titleColor ? { color: titleColor } : undefined}
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
               continue;
