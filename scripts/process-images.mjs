@@ -76,6 +76,15 @@ const jobs = [
       return ["IMG_3474.jpeg", ...shots];
     })(),
   },
+  {
+    slug: "the-g-word",
+    dir: path.join(ROOT, "guns"),
+    files: [
+      "img5.jpg", "img11.jpg", "img15.jpg", "img19.jpg", "img23.jpg",
+      "img27.jpg", "img31.jpg", "img35.jpg", "img40.jpg", "img44.jpg",
+      "img48.jpg", "img52.jpg", "img56.jpg", "Untitled design.png",
+    ],
+  },
 ];
 
 async function run() {

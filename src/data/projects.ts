@@ -40,6 +40,21 @@ import cableMan01 from "@/assets/work/cable-man/01.jpg";
 import cableMan02 from "@/assets/work/cable-man/02.jpg";
 import cableMan03 from "@/assets/work/cable-man/03.jpg";
 
+import gun01 from "@/assets/work/the-g-word/01.jpg";
+import gun02 from "@/assets/work/the-g-word/02.jpg";
+import gun03 from "@/assets/work/the-g-word/03.jpg";
+import gun04 from "@/assets/work/the-g-word/04.jpg";
+import gun05 from "@/assets/work/the-g-word/05.jpg";
+import gun06 from "@/assets/work/the-g-word/06.jpg";
+import gun07 from "@/assets/work/the-g-word/07.jpg";
+import gun08 from "@/assets/work/the-g-word/08.jpg";
+import gun09 from "@/assets/work/the-g-word/09.jpg";
+import gun10 from "@/assets/work/the-g-word/10.jpg";
+import gun11 from "@/assets/work/the-g-word/11.jpg";
+import gun12 from "@/assets/work/the-g-word/12.jpg";
+import gun13 from "@/assets/work/the-g-word/13.jpg";
+import gun14 from "@/assets/work/the-g-word/14.jpg";
+
 export type Accent = "pink" | "skyblue" | "lavender" | "indigo";
 
 export type Section =
@@ -98,16 +113,17 @@ export type Project = {
   theme?: Theme;
   animateTitle?: boolean;
   arcTitle?: boolean;
+  playfulGallery?: { src: StaticImageData; alt: string; caption?: string }[];
 };
 
 export const projects: Project[] = [
   {
     slug: "the-g-word",
     title: "The G Word",
-    medium: "In progress",
-    blurb: "A newer, playful piece — photos coming soon.",
+    medium: "Drawing",
+    blurb: "Guns, drawn in every colour but the ones they come in.",
     accent: "pink",
-    inProgress: true,
+    cover: gun14,
     theme: {
       bg: "#fcd7e0",
       text: "#013961",
@@ -118,6 +134,21 @@ export const projects: Project[] = [
         type: "intro",
         body: ["Are you ready to Die?"],
       },
+    ],
+    playfulGallery: [
+      { src: gun01, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun02, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Marker on paper, 21.5 × 14 cm." },
+      { src: gun03, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Marker on paper, 21.5 × 14 cm." },
+      { src: gun04, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun05, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun06, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun07, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun08, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil and marker on paper, 27.5 × 21 cm." },
+      { src: gun09, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun10, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun11, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun12, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun13, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
     ],
   },
 

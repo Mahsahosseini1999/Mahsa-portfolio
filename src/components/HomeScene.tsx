@@ -125,6 +125,28 @@ const trinkets: Trinket[] = [
       </svg>
     ),
   },
+  {
+    href: "/projects/the-g-word",
+    label: "The G Word — a gun",
+    depth: 30,
+    rotate: -14,
+    floatDuration: 20,
+    roamX: [0, 80, 150, 70, 0],
+    roamY: [0, -70, -10, 60, 0],
+    className: "left-[44%] bottom-[8%] w-12 sm:w-16",
+    node: (
+      <svg viewBox="0 0 100 60" fill="none">
+        <path
+          d="M8 32h50a6 6 0 0 0 6-6V14h20v10h8v8H82a4 4 0 0 0-4 4c0 9-7 16-16 16H30"
+          stroke="#ff2e63"
+          strokeWidth="3.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M30 46 22 58" stroke="#ff2e63" strokeWidth="3.4" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 export default function HomeScene() {

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import AnimatedTitle from "@/components/AnimatedTitle";
 import ArcTitle from "@/components/ArcTitle";
 import Slideshow from "@/components/Slideshow";
+import GunsPlayfulGallery from "@/components/GunsPlayfulGallery";
 
 function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" }> }) {
   const colClass =
@@ -355,6 +356,12 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
           return nodes;
         })()}
       </div>
+
+      {project.playfulGallery && (
+        <div className="mt-10">
+          <GunsPlayfulGallery images={project.playfulGallery} />
+        </div>
+      )}
 
       <div className="mt-16 border-t border-ink/10 pt-8">
         <Link href={`/projects/${next.slug}`} className="group inline-flex flex-col">
