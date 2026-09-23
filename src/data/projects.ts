@@ -60,11 +60,61 @@ import windWillCarry01 from "@/assets/work/becoming-soil-wind-will-carry/01.jpg"
 import decompostProcess from "@/assets/work/becoming-soil-decompost/01.jpg";
 import decompostStill from "@/assets/work/becoming-soil-decompost/02.jpg";
 import radayeSiahWhole from "@/assets/work/becoming-soil-radaye-siah-whole/01.jpg";
+import radayeSiahTurbah from "@/assets/work/becoming-soil-radaye-siah-turbah/01.jpg";
+
+import storylinesWoven from "@/assets/work/becoming-soil-storylines-woven/01.jpg";
+import stripe01 from "@/assets/work/becoming-soil-storylines-stripes/01.jpg";
+import stripe02 from "@/assets/work/becoming-soil-storylines-stripes/02.jpg";
+import stripe03 from "@/assets/work/becoming-soil-storylines-stripes/03.jpg";
+import stripe04 from "@/assets/work/becoming-soil-storylines-stripes/04.jpg";
+import stripe05 from "@/assets/work/becoming-soil-storylines-stripes/05.jpg";
+import stripe06 from "@/assets/work/becoming-soil-storylines-stripes/06.jpg";
+import stripe07 from "@/assets/work/becoming-soil-storylines-stripes/07.jpg";
+import stripe08 from "@/assets/work/becoming-soil-storylines-stripes/08.jpg";
+import stripe09 from "@/assets/work/becoming-soil-storylines-stripes/09.jpg";
+import stripe10 from "@/assets/work/becoming-soil-storylines-stripes/10.jpg";
+import stripe11 from "@/assets/work/becoming-soil-storylines-stripes/11.jpg";
+import stripe12 from "@/assets/work/becoming-soil-storylines-stripes/12.jpg";
+import stripe13 from "@/assets/work/becoming-soil-storylines-stripes/13.jpg";
+import stripe14 from "@/assets/work/becoming-soil-storylines-stripes/14.jpg";
+import stripe15 from "@/assets/work/becoming-soil-storylines-stripes/15.jpg";
+import stripe16 from "@/assets/work/becoming-soil-storylines-stripes/16.jpg";
+import lotusProcess1 from "@/assets/work/becoming-soil-lotus-process1/01.jpg";
+import lotusNotPreserved01 from "@/assets/work/becoming-soil-lotus-not-preserved/01.jpg";
+import lotusNotPreserved02 from "@/assets/work/becoming-soil-lotus-not-preserved/02.jpg";
+import lotusNotPreserved03 from "@/assets/work/becoming-soil-lotus-not-preserved/03.jpg";
+import lotusNotPreserved04 from "@/assets/work/becoming-soil-lotus-not-preserved/04.jpg";
+import lotusNotPreserved05 from "@/assets/work/becoming-soil-lotus-not-preserved/05.jpg";
+import lotusNotPreserved06 from "@/assets/work/becoming-soil-lotus-not-preserved/06.jpg";
+import lotusNotPreserved07 from "@/assets/work/becoming-soil-lotus-not-preserved/07.jpg";
+import lotusNotPreserved08 from "@/assets/work/becoming-soil-lotus-not-preserved/08.jpg";
+import lotusNotPreserved09 from "@/assets/work/becoming-soil-lotus-not-preserved/09.jpg";
+import lotusNotPreserved10 from "@/assets/work/becoming-soil-lotus-not-preserved/10.jpg";
+import lotusGlycerin01 from "@/assets/work/becoming-soil-lotus-glycerin/01.jpg";
+import lotusGlycerin02 from "@/assets/work/becoming-soil-lotus-glycerin/02.jpg";
+import lotusGlycerin03 from "@/assets/work/becoming-soil-lotus-glycerin/03.jpg";
+import lotusGlycerin04 from "@/assets/work/becoming-soil-lotus-glycerin/04.jpg";
+import lotusGlycerin05 from "@/assets/work/becoming-soil-lotus-glycerin/05.jpg";
+import lotusGlycerin06 from "@/assets/work/becoming-soil-lotus-glycerin/06.jpg";
+import lotusGlycerin07 from "@/assets/work/becoming-soil-lotus-glycerin/07.jpg";
+import lotusGlycerin08 from "@/assets/work/becoming-soil-lotus-glycerin/08.jpg";
+import lotusWholeProcess from "@/assets/work/becoming-soil-lotus-whole-process/01.jpg";
+import lotusGraduation02 from "@/assets/work/becoming-soil-lotus-graduation/02.jpg";
+import lotusGraduation03 from "@/assets/work/becoming-soil-lotus-graduation/03.jpg";
+import lotusGraduation04 from "@/assets/work/becoming-soil-lotus-graduation/04.jpg";
+import lotusGraduation05 from "@/assets/work/becoming-soil-lotus-graduation/05.jpg";
+import lotusGraduation06 from "@/assets/work/becoming-soil-lotus-graduation/06.jpg";
+import lotusGraduation07 from "@/assets/work/becoming-soil-lotus-graduation/07.jpg";
 
 export type Accent = "pink" | "skyblue" | "lavender" | "indigo";
 
 export type Section =
-  | { type: "intro"; body: string[] }
+  | {
+      type: "intro";
+      body: string[];
+      links?: { word: string; href: string; color?: string }[];
+      poem?: { lines: string[] };
+    }
   | {
       type: "heading";
       title: string;
@@ -94,6 +144,12 @@ export type Section =
       href?: string;
       linkLabel?: string;
       showPlayIcon?: boolean;
+      caption?: string;
+      captionColor?: string;
+    }
+  | {
+      type: "marquee";
+      images: { src: StaticImageData; alt: string }[];
       caption?: string;
       captionColor?: string;
     }
@@ -208,24 +264,29 @@ export const projects: Project[] = [
     },
     sections: [
       {
+        type: "intro",
+        body: [
+          "I came to soil through death.",
+          "Since childhood, I have been afraid of it. My body felt strange to me, as if a thin layer of glass stood between me and the world, and beneath it was the fear that bodies end. Greenberg, Pyszczynski and Solomon call the structures people build to make death livable “terror management.” Looking back, I had been building my own buffers for years without knowing it.",
+          "I grew up in Iran, which Mohammad Sanati and Moujan Mirdamadi describe as a culture that is always conscious of death. When my grandfather died, I was eighteen. At Behesht Zahra, Tehran's central cemetery, grief became procedure.",
+          "This research began in 2024. Slowly, my question shifted from death itself to what happens to the body after it, and what it means to return to the material world. Soil became the way to think it through. It is both matter and a living environment, a place where things break down and become something else.",
+          "Maria Puig de la Bellacasa writes about “care time,” a way of relating to soil that pays attention to what is already alive rather than to what can be taken from it. I began to ask what it means to pay attention, and whether attention itself can become a form of care.",
+          "Soil also became a way of living with my own fear. When the anxiety comes, I put my hands in it, close my eyes and breathe. Passmore and Howell argue that connecting with nature can ease the fear of death by placing the self within cycles larger than a single life. For me, it does not erase the fear. It gives me somewhere to place it.",
+          "But the more closely I looked, the more contradictions appeared. My relationship with soil was also a relationship of taking. I collected it from graves and from my garden, and I worked with turbah that had already been taken from the earth. I carried these materials away in plastic bags. At Geertjesgolf, a sand extraction site in the Netherlands, I stood on the machines. The noise and vibration drowned everything out. I watched the land being fed in, separated and carried away, to become the roads and houses I pass by and live in.",
+          "Reading Achille Mbembe, and Alphée Mpassi's writing on his work, I began to think about how colonial power reduced both people and land to something extractable. My gestures were smaller and quieter, but they made me question my own participation in the same broader logic of taking. My attentiveness was not innocent.",
+          "Donna Haraway asks us to stay with the trouble: not to look for a way out, but to learn to live and die well together with human and nonhuman others. This is where my work remains. Nothing is resolved. But decay, I learned, is not an end. It is the condition of transformation.",
+          "I came to the soil to understand death. I stayed because it was teaching me how to stay alive, and how to live.",
+        ],
+      },
+      {
         type: "heading",
         title: "Wind Will Carry",
         boxed: false,
         body: [
-          "I made this work when I had started researching an idea that had occupied me since childhood: death. Grief was part of this research from the beginning.",
-          "I collected fallen autumn leaves and arranged them on a stone chair outside the exhibition space. Throughout the exhibition, I tended to them and kept the wind from scattering them. At the end, I sat and watched the wind carry them away.",
-          "The leaves became a way of approaching grief through material. Rather than representing loss, I was watching something disappear.",
+          "This was the first work I made when I began researching death, and grief was part of it from the beginning.",
+          "I collected fallen autumn leaves and arranged them on an empty stone chair outside the exhibition space. Throughout the exhibition, I tended to them and kept the wind from scattering them. At the end, I sat on the ground beside the chair and watched the wind carry them away.",
+          "I wonder where they are now. Perhaps they have already become soil.",
         ],
-        poem: {
-          title: "The loss.",
-          lines: [
-            "You wake up and the world is not the same.",
-            "It's gone, and this is the beginning of emptiness.",
-            "It has a way of creeping in, like a shadow. There's no preparation for this moment.",
-            "It feels like a hole is opening up inside, wrapping around you like a heavy blanket.",
-            "You are left to carry on.",
-          ],
-        },
       },
       {
         type: "gallery",
@@ -244,7 +305,8 @@ export const projects: Project[] = [
         title: "De-Compost",
         boxed: false,
         body: [
-          "I started collecting soil from cemeteries in Groningen and brought it back to my studio. I placed small samples under a microscope and photographed what I found.",
+          "At every burial I attended, the same verse was said: “We made you from soil; we will return you to this soil; we will raise you again from this soil.” (Quran 20:55, my translation.) Like “dust to dust,” I had always heard it as a prayer. I started to see it as a material process that my body will go through one day.",
+          "I collected small amounts of soil from the planted parts of graves in Groningen cemeteries and brought it to my studio. I added my own hair and nails and placed small samples under a microscope. The hair and nails stayed there as I watched, slowly mixing with the soil.",
         ],
       },
       {
@@ -259,8 +321,8 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "I was looking for traces of life in the soil, trying to understand what happens to the particles I’ll one day become; what life looks like for them. I added parts of my own body into the soil and watched it all shift, blend, and change over time. I was facing my fear little by little, through curiosity and observation.",
-          "The microscope gave me another way of looking at the material. I was no longer only looking at soil as something that holds the dead, but as a living environment in itself.",
+          "I was looking for traces of life. Under the lens, I found tiny particles in many colours and shapes. At the same time, I was watching documentaries and researching soil, learning how much life exists within it that I could not see: microorganisms breaking things down and turning them into something new.",
+          "The soil was no longer only something that holds the dead. It was a living environment in itself, and things continue to grow in it.",
         ],
       },
       {
@@ -278,10 +340,24 @@ export const projects: Project[] = [
         title: "Radaye Siah",
         boxed: false,
         body: [
-          "The \"turbah\" is a small religious object made of soil, used during prayer. I had been eating turbah since childhood; I loved its taste and smell. I began using it as a drawing material almost accidentally, when I was thinking about what else I could do with it and noticed the marks it left on paper. It worked almost like a dry pastel.",
-          "I began making drawings with it that represent death and mourning, drawing from both Islamic and Christian imagery.",
-          "In Islam, mourning is marked by wearing black for 40 days. To me, each day had a shape, so I made 40 black drawings. I attached them to black fabric and dressed a female mannequin with them.",
-          "It became a practice of daily mourning and daily making.",
+          "A turbah is a small tablet of soil used in Shia prayer; you place your forehead on it during prostration. Mine came from Karbala, where turbahs are made in large numbers from soil taken from the shrine of Imam Hussain. I have eaten turbah since childhood, and I still do from time to time. I love its taste and smell.",
+        ],
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: radayeSiahTurbah,
+            alt: "Three turbah tablets of soil, used in Shia prayer",
+          },
+        ],
+      },
+      {
+        type: "intro",
+        body: [
+          "I began using it as a drawing material when I was wondering what I could make with it and noticed the marks it left on paper. It worked almost like a dry pastel.",
+          "Where I grew up, people wear black for 40 days after someone dies. I was experiencing the loss of my grandfather, and to me, each day had a shape. For 40 days, I drew with turbah on black cardboard: crying faces, graves, candles, mosques, and churches. I attached the drawings to black fabric and draped it like a chador over a female mannequin.",
+          "Making something every day became part of my practice. We live every day, and we die only once.",
         ],
       },
       {
@@ -294,6 +370,173 @@ export const projects: Project[] = [
             alt: "Mannequin dressed in black fabric covered with black drawings for Radaye Siah",
             caption: "Radaye Siah, 2025. Turbah on black cardboard, linen, turbah. 1.80 × 50 cm.",
           },
+        ],
+      },
+      {
+        type: "heading",
+        title: "Storylines",
+        boxed: false,
+        body: [
+          "After the turbah drawings, I continued the daily practice of making, this time with soil from my garden, clay from a sand extraction site, and turbah. I worked on strips of paper, drawing trees and mountains with soil pigment. The strips already felt like storylines to me.",
+          "The soils came from very different places, but on paper they felt like one material. I was thinking about what could hold these different places together.",
+          "At first, I wove the strips together so their stories could meet. Later, I opened them up again, allowing each strip to exist on its own.",
+        ],
+      },
+      {
+        type: "gallery",
+        captionColor: "#013961",
+        images: [
+          {
+            src: storylinesWoven,
+            alt: "Strips of soil-pigment drawings woven together",
+            caption: "Storylines, 44 × 34 cm, soil on paper, 2025.",
+          },
+        ],
+      },
+      {
+        type: "intro",
+        body: [
+          "I drew trees intuitively, thinking about how the dead become food for what grows. I drew mountains because I grew up beneath them, and here in the Netherlands there are none.",
+          "The daily process became meditative. At the same time, I began questioning my own role in working with soil. Before I could use the garden soil, I left it on newspaper in the open air so the worms and insects living in it could find their way out. I was taking away their home. My attentiveness was not innocent.",
+        ],
+      },
+      {
+        type: "marquee",
+        captionColor: "#013961",
+        caption: "Storylines, 2 × 44 cm each, soil on paper, 2025.",
+        images: [
+          { src: stripe01, alt: "Strip drawing from Storylines" },
+          { src: stripe02, alt: "Strip drawing from Storylines" },
+          { src: stripe03, alt: "Strip drawing from Storylines" },
+          { src: stripe04, alt: "Strip drawing from Storylines" },
+          { src: stripe05, alt: "Strip drawing from Storylines" },
+          { src: stripe06, alt: "Strip drawing from Storylines" },
+          { src: stripe07, alt: "Strip drawing from Storylines" },
+          { src: stripe08, alt: "Strip drawing from Storylines" },
+          { src: stripe09, alt: "Strip drawing from Storylines" },
+          { src: stripe10, alt: "Strip drawing from Storylines" },
+          { src: stripe11, alt: "Strip drawing from Storylines" },
+          { src: stripe12, alt: "Strip drawing from Storylines" },
+          { src: stripe13, alt: "Strip drawing from Storylines" },
+          { src: stripe14, alt: "Strip drawing from Storylines" },
+          { src: stripe15, alt: "Strip drawing from Storylines" },
+          { src: stripe16, alt: "Strip drawing from Storylines" },
+        ],
+      },
+      {
+        type: "heading",
+        title: "I myself grew from murky soil.",
+        boxed: false,
+        body: [
+          "In my earlier works, I kept using processed, factory-made paper. I wanted a surface that could be in dialogue with the soil, something from the same family. While researching, I came across the lotus. The flower rises from the mud towards the sun and blooms without being stained by it. In Buddhism, it stands for purity and awakening. That was what drew me to it.",
+          "The leaves I use were harvested, dried and imported to the Netherlands. I bought them in an oriental store, and I am aware that I am buying something extracted. But when I put them in water, they soften and open again, almost as if they come back to a different kind of life. I give them another purpose, and a different way to end.",
+        ],
+      },
+      {
+        type: "gallery",
+        size: "sm",
+        images: [{ src: lotusProcess1, alt: "Lotus leaves soaking in water" }],
+      },
+      {
+        type: "intro",
+        body: [
+          "At first, I treated them the way I had treated the black cardboard in the turbah drawings. I wanted to step away from man-made tools and the fine, controlled lines they leave, so I did not use scissors. I tore the leaves by hand into smaller pieces. I drew on them with soil and left them. Mold appeared, the leaves dried, and the drawings slowly faded with them. The leaf became a skin, and the soil an imprint.",
+        ],
+      },
+      {
+        type: "gallery",
+        layout: "slideshow",
+        captionColor: "#013961",
+        images: [
+          { src: lotusNotPreserved01, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved02, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved03, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved04, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved05, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved06, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved07, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved08, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved09, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+          { src: lotusNotPreserved10, alt: "Soil drawing on lotus leaf, not preserved", caption: "soil on lotus leaves, variable size, 2026" },
+        ],
+      },
+      {
+        type: "intro",
+        body: [
+          "In the next set, I covered the leaves with glycerin before drawing on them, as an act of preservation. They stayed well, with the drawings still on them.",
+        ],
+      },
+      {
+        type: "gallery",
+        layout: "slideshow",
+        captionColor: "#013961",
+        images: [
+          { src: lotusGlycerin01, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin02, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin03, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin04, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin05, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin06, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin07, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+          { src: lotusGlycerin08, alt: "Soil drawing on lotus leaf covered in glycerin", caption: "soil on lotus leaves covered in glycerin, variable size, 2026" },
+        ],
+      },
+      {
+        type: "intro",
+        body: [
+          "Then I began working with whole leaves. I drew on them with soil again, but this time I did not let them dry. I kept them moist so the mold could do more of the work. I was no longer letting go or holding on, but preparing the conditions. It became a collaboration between me, the soil, the water, and the mold. None of us is in full control.",
+        ],
+      },
+      {
+        type: "gallery",
+        size: "sm",
+        images: [{ src: lotusWholeProcess, alt: "Whole lotus leaf soil drawing process" }],
+      },
+      {
+        type: "intro",
+        body: [
+          "My graduation exhibition took place in the A-kerk, a church in Groningen. I made an installation: a square filled with soil, with lotus leaves arranged in a circle, from slightly fresher leaves to torn ones to small pieces at the start of decay. In the middle of the garden soil, I placed cemetery soil, and during the exhibition, a small plant began to grow.\nThe installation was interactive. People could touch and play with the soil, and it held their imprints.\nNext to it were the stairs to the pulpit, a place visitors are usually not allowed to enter. This time, I was the one speaking: the soundscape and the poem.\nBy the end, the soil carried the traces of everyone who had played in it. Decay is not an end. It is transformation.",
+        ],
+        links: [
+          {
+            word: "soundscape",
+            href: "https://soundcloud.com/mahsa-hosseini-605313055/i-myself-grew-from-this-murky?si=cd74b07a691147fe9ede190146cc32df&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+            color: "#7c3aed",
+          },
+        ],
+        poem: {
+          lines: [
+            "How am I to live",
+            "My world is dark and red",
+            "Overflowed with hollow hopes",
+            "Without a single motive",
+            "I walk through it",
+            "My feet feel the ground",
+            "But I do not",
+            "How am I to live",
+            "Caught between a bomb-raining superpower",
+            "and a gun-wielding dictator?",
+            "The sun behind a cloud does not deny its existence",
+            "Light is there, but only for the chosen ones",
+            "I turn to my body",
+            "An excavation within me",
+            "For me",
+            "So that the me-ness in me may sever",
+            "And reach to a we beyond",
+          ],
+        },
+      },
+      {
+        type: "gallery",
+        layout: "slideshow",
+        captionColor: "#013961",
+        images: [
+          { src: lotusGraduation05, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation02, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation03, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation04, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation06, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation07, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
         ],
       },
     ],

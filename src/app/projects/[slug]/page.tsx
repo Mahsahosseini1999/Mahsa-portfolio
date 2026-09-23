@@ -8,6 +8,7 @@ import AnimatedTitle from "@/components/AnimatedTitle";
 import ArcTitle from "@/components/ArcTitle";
 import Slideshow from "@/components/Slideshow";
 import GunsPlayfulGallery from "@/components/GunsPlayfulGallery";
+import StorylinesMarquee from "@/components/StorylinesMarquee";
 
 function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" }> }) {
   const colClass =
@@ -144,11 +145,43 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
           if (section.type === "intro") {
             nodes.push(
               <div key={i} className="flex flex-col gap-4">
-                {section.body.map((p, j) => (
-                  <p key={j} className="max-w-[72ch] text-lg leading-relaxed">
-                    {p}
-                  </p>
-                ))}
+                {section.body.map((p, j) => {
+                  const link = section.links?.find((l) => p.includes(l.word));
+                  if (!link) {
+                    return (
+                      <p key={j} className="max-w-[72ch] whitespace-pre-line text-lg leading-relaxed">
+                        {p}
+                      </p>
+                    );
+                  }
+                  const idx = p.indexOf(link.word);
+                  const before = p.slice(0, idx);
+                  const after = p.slice(idx + link.word.length);
+                  return (
+                    <p key={j} className="max-w-[72ch] whitespace-pre-line text-lg leading-relaxed">
+                      {before}
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline underline-offset-4 hover:opacity-80"
+                        style={{ color: link.color }}
+                      >
+                        {link.word}
+                      </a>
+                      {after}
+                    </p>
+                  );
+                })}
+                {section.poem && (
+                  <div className="mt-2 flex flex-col gap-2">
+                    {section.poem.lines.map((line, j) => (
+                      <p key={j} className="max-w-[72ch] text-lg italic leading-tight text-ink-soft">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </div>
             );
             continue;
@@ -353,6 +386,23 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                       {section.linkLabel}
                     </a>
                   </div>
+                )}
+              </div>
+            );
+            continue;
+          }
+
+          if (section.type === "marquee") {
+            nodes.push(
+              <div key={i} className="flex flex-col gap-3">
+                <StorylinesMarquee images={section.images} />
+                {section.caption && (
+                  <p
+                    className={`whitespace-pre-line text-center text-sm ${section.captionColor ? "" : "text-accent"}`}
+                    style={section.captionColor ? { color: section.captionColor } : undefined}
+                  >
+                    {section.caption}
+                  </p>
                 )}
               </div>
             );

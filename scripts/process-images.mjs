@@ -110,12 +110,61 @@ const jobs = [
     files: ["whole.jpg"],
   },
   {
+    slug: "becoming-soil-radaye-siah-turbah",
+    dir: path.join(ROOT, "Becoming Soil ", "turbah drawings "),
+    files: ["img7 2.png"],
+  },
+  {
     slug: "becoming-soil-radaye-siah-drawings",
     dir: path.join(ROOT, "Becoming Soil ", "turbah drawings "),
     files: [
       "img5.png", "img11.png", "img15.png", "img19.png", "img23.png",
       "img27.png", "img31.png", "img35.png",
       "IMG_5060-removebg-preview.png", "IMG_5061-removebg-preview.png",
+    ],
+  },
+  {
+    slug: "becoming-soil-storylines-woven",
+    dir: path.join(ROOT, "Becoming Soil ", "stripe drawings "),
+    files: ["woven.jpg"],
+  },
+  {
+    slug: "becoming-soil-storylines-stripes",
+    dir: path.join(ROOT, "Becoming Soil ", "stripe drawings "),
+    files: Array.from({ length: 16 }, (_, i) => `${i + 1}.png`),
+  },
+  {
+    slug: "becoming-soil-lotus-process1",
+    dir: path.join(ROOT, "Becoming Soil ", "lutous "),
+    files: ["process1.jpg"],
+  },
+  {
+    slug: "becoming-soil-lotus-not-preserved",
+    dir: path.join(ROOT, "Becoming Soil ", "lutous ", "lotus : not preserved "),
+    files: [
+      "img5.png", "img11.png", "img15.png", "img19.png", "img23.png",
+      "img27.png", "img31.png", "img35.png", "img40.png", "img44.png",
+    ],
+  },
+  {
+    slug: "becoming-soil-lotus-glycerin",
+    dir: path.join(ROOT, "Becoming Soil ", "lutous ", "glycerin"),
+    files: [
+      "img5.png", "img11.png", "img15.png", "img19.png", "img23.png",
+      "img27.png", "img31.png", "img35.png",
+    ],
+  },
+  {
+    slug: "becoming-soil-lotus-whole-process",
+    dir: path.join(ROOT, "Becoming Soil ", "lutous "),
+    files: ["whole lotus process .png"],
+  },
+  {
+    slug: "becoming-soil-lotus-graduation",
+    dir: path.join(ROOT, "Becoming Soil ", "lutous ", "i myself grew from this murky soil"),
+    files: [
+      "IMG_2668.jpg", "IMG_2722.jpg", "IMG_2724.jpg", "IMG_2759.jpg",
+      "IMG_2770.jpg", "IMG_2781.jpg", "IMG_2795.jpg",
     ],
   },
 ];

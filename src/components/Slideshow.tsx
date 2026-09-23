@@ -32,22 +32,23 @@ export default function Slideshow({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="relative flex items-center justify-center">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+      <div className="relative flex h-[50vh] items-center justify-center sm:h-[70vh]">
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={index}
             custom={direction}
             initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction > 0 ? -40 : 40 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="absolute inset-0 flex items-center justify-center"
           >
             <Image
               src={current.src}
               alt={current.alt}
               placeholder="blur"
               sizes="(min-width: 640px) 60vw, 90vw"
-              className={`mx-auto h-auto max-h-[70vh] w-auto object-contain ${
+              className={`mx-auto h-full max-h-full w-auto object-contain ${
                 treatment === "grain" ? "grain-treatment" : ""
               }`}
             />
