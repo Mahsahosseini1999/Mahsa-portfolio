@@ -147,6 +147,23 @@ const trinkets: Trinket[] = [
       </svg>
     ),
   },
+  {
+    href: "/projects/one-piece",
+    label: "One Piece — a straw hat",
+    depth: 38,
+    rotate: -6,
+    floatDuration: 15,
+    roamX: [0, -90, -20, 100, 0],
+    roamY: [0, 60, 130, 40, 0],
+    className: "right-[38%] top-[8%] w-14 sm:w-20",
+    node: (
+      <svg viewBox="0 0 100 70" fill="none">
+        <ellipse cx="50" cy="30" rx="46" ry="10" fill="#ffd400" stroke="#013961" strokeWidth="2.4" />
+        <path d="M22 30c0-14 12-24 28-24s28 10 28 24" fill="#ffd400" stroke="#013961" strokeWidth="2.4" />
+        <rect x="22" y="26" width="56" height="8" rx="1" fill="#ff2e63" />
+      </svg>
+    ),
+  },
 ];
 
 export default function HomeScene() {

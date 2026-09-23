@@ -105,6 +105,11 @@ import lotusGraduation04 from "@/assets/work/becoming-soil-lotus-graduation/04.j
 import lotusGraduation05 from "@/assets/work/becoming-soil-lotus-graduation/05.jpg";
 import lotusGraduation06 from "@/assets/work/becoming-soil-lotus-graduation/06.jpg";
 import lotusGraduation07 from "@/assets/work/becoming-soil-lotus-graduation/07.jpg";
+import onePiece01 from "@/assets/work/one-piece/01.jpg";
+import onePiece02 from "@/assets/work/one-piece/02.jpg";
+import onePiece03 from "@/assets/work/one-piece/03.jpg";
+import onePiece04 from "@/assets/work/one-piece/04.jpg";
+import onePiece05 from "@/assets/work/one-piece/05.jpg";
 
 export type Accent = "pink" | "skyblue" | "lavender" | "indigo";
 
@@ -177,6 +182,7 @@ export type Project = {
   animateTitle?: boolean;
   arcTitle?: boolean;
   playfulGallery?: { src: StaticImageData; alt: string; caption?: string }[];
+  hidden?: boolean;
 };
 
 export const projects: Project[] = [
@@ -783,6 +789,39 @@ export const projects: Project[] = [
           { src: ppt08, alt: "Photograph from People, Places, Time", caption: "Untitled, 2020. Archival film scan from 35mm negative." },
           { src: ppt09, alt: "Photograph from People, Places, Time", caption: "Untitled, 2020. Archival film scan from 35mm negative." },
           { src: ppt10, alt: "Photograph from People, Places, Time", caption: "Untitled, 2020. Archival film scan from 35mm negative." },
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "one-piece",
+    title: "One Piece",
+    medium: "Drawing",
+    blurb: "Fan drawings made while watching One Piece.",
+    accent: "pink",
+    hidden: true,
+    cover: onePiece01,
+    theme: {
+      bg: "#fcd7e0",
+      text: "#013961",
+      textSoft: "#4d7290",
+    },
+    sections: [
+      {
+        type: "intro",
+        body: ["Some drawings I made while watching One Piece."],
+      },
+      {
+        type: "gallery",
+        layout: "slideshow",
+        captionColor: "#013961",
+        images: [
+          { src: onePiece01, alt: "One Piece fan drawing, colour pencil and marker on paper" },
+          { src: onePiece02, alt: "One Piece fan drawing, colour pencil and marker on paper" },
+          { src: onePiece03, alt: "One Piece fan drawing, colour pencil and marker on paper" },
+          { src: onePiece04, alt: "One Piece fan drawing, colour pencil and marker on paper" },
+          { src: onePiece05, alt: "One Piece fan drawing, colour pencil and marker on paper" },
         ],
       },
     ],

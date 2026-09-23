@@ -167,6 +167,11 @@ const jobs = [
       "IMG_2770.jpg", "IMG_2781.jpg", "IMG_2795.jpg",
     ],
   },
+  {
+    slug: "one-piece",
+    dir: path.join(ROOT, "one piece darwings "),
+    files: ["img5.jpg", "img11.jpg", "img15.jpg", "img19.jpg", "img23.jpg"],
+  },
 ];
 
 async function run() {
