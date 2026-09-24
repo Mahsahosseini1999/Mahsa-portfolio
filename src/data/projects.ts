@@ -187,76 +187,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "the-g-word",
-    title: "The G Word",
-    medium: "Drawing",
-    blurb: "Guns, drawn in every colour but the ones they come in.",
-    accent: "pink",
-    cover: gun14,
-    theme: {
-      bg: "#fcd7e0",
-      text: "#013961",
-      textSoft: "#4d7290",
-    },
-    sections: [
-      {
-        type: "intro",
-        body: ["Are you ready to Die?"],
-      },
-    ],
-    playfulGallery: [
-      { src: gun01, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Colour pencil and marker on paper, 21.5 × 14 cm." },
-      { src: gun02, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Marker on paper, 21.5 × 14 cm." },
-      { src: gun03, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Marker on paper, 21.5 × 14 cm." },
-      { src: gun04, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
-      { src: gun05, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
-      { src: gun06, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
-      { src: gun07, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
-      { src: gun08, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil and marker on paper, 27.5 × 21 cm." },
-      { src: gun09, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
-      { src: gun10, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
-      { src: gun11, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
-      { src: gun12, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
-      { src: gun13, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
-    ],
-  },
-
-  {
-    slug: "brick-ballet",
-    title: "Brick Ballet",
-    medium: "Video",
-    credit: "Collaboration with Evangelia Moschou and Chrysa Mpampa",
-    blurb: "A collaborative dance, danced on bricks.",
-    accent: "indigo",
-    cover: brickBallet01,
-    theme: {
-      bg: "#c0e2fa",
-      text: "#013961",
-      textSoft: "#4d7290",
-    },
-    sections: [
-      {
-        type: "intro",
-        body: [
-          "Beneath every street we walk on lies the invisible work of the bodies that made the bricks and the hands that placed them in walls or on the ground. We move across these surfaces every day, but we rarely stop to consider the weight of that history beneath our feet.",
-          "This raises the question: what does it mean to truly “get in touch” with a brick?",
-          "By attaching bricks to the feet of a dancer, the material becomes an extension of the body. The brick meets the street and becomes a tool for marking and sounding the city. This work invites audiences to experience brick in a unique way through seeing and hearing. The dancer moves through the urban space and feels the weight and resistance of the bricks with every step. Moving takes effort. grace becomes struggle.",
-          "With this work, Hosseini and Moschou aim to bring material and body closer together and let us feel what it means to carry bricks in another way.",
-        ],
-      },
-      {
-        type: "video",
-        still: brickBallet01,
-        alt: "Still collage from Brick Ballet",
-        href: "https://youtu.be/PxJO553yYas",
-        linkLabel: "Watch Brick Ballet",
-        showPlayIcon: false,
-        caption: "Brick Ballet, 2026. Video still.",
-      },
-    ],
-  },
-
-  {
     slug: "in-the-ground",
     title: "Becoming Soil",
     medium: "Installation, video, sound, drawing",
@@ -549,6 +479,76 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "brick-ballet",
+    title: "Brick Ballet",
+    medium: "Video",
+    credit: "Collaboration with Evangelia Moschou and Chrysa Mpampa",
+    blurb: "A collaborative dance, danced on bricks.",
+    accent: "indigo",
+    cover: brickBallet01,
+    theme: {
+      bg: "#c0e2fa",
+      text: "#013961",
+      textSoft: "#4d7290",
+    },
+    sections: [
+      {
+        type: "intro",
+        body: [
+          "Beneath every street we walk on lies the invisible work of the bodies that made the bricks and the hands that placed them in walls or on the ground. We move across these surfaces every day, but we rarely stop to consider the weight of that history beneath our feet.",
+          "This raises the question: what does it mean to truly “get in touch” with a brick?",
+          "By attaching bricks to the feet of a dancer, the material becomes an extension of the body. The brick meets the street and becomes a tool for marking and sounding the city. This work invites audiences to experience brick in a unique way through seeing and hearing. The dancer moves through the urban space and feels the weight and resistance of the bricks with every step. Moving takes effort. grace becomes struggle.",
+          "With this work, Hosseini and Moschou aim to bring material and body closer together and let us feel what it means to carry bricks in another way.",
+        ],
+      },
+      {
+        type: "video",
+        still: brickBallet01,
+        alt: "Still collage from Brick Ballet",
+        href: "https://youtu.be/PxJO553yYas",
+        linkLabel: "Watch Brick Ballet",
+        showPlayIcon: false,
+        caption: "Brick Ballet, 2026. Video still.",
+      },
+    ],
+  },
+
+  {
+    slug: "the-g-word",
+    title: "The G Word",
+    medium: "Drawing",
+    blurb: "Guns, drawn in every colour but the ones they come in.",
+    accent: "pink",
+    cover: gun14,
+    theme: {
+      bg: "#fcd7e0",
+      text: "#013961",
+      textSoft: "#4d7290",
+    },
+    sections: [
+      {
+        type: "intro",
+        body: ["Are you ready to Die?"],
+      },
+    ],
+    playfulGallery: [
+      { src: gun01, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun02, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Marker on paper, 21.5 × 14 cm." },
+      { src: gun03, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2025. Marker on paper, 21.5 × 14 cm." },
+      { src: gun04, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun05, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun06, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun07, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2026. Colour pencil and marker on paper, 21.5 × 14 cm." },
+      { src: gun08, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil and marker on paper, 27.5 × 21 cm." },
+      { src: gun09, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun10, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun11, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun12, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+      { src: gun13, alt: "Colourful drawing from The G Word", caption: "Untitled Gun, 2024. Colour pencil, 27.5 × 21 cm." },
+    ],
+  },
+
+  {
     slug: "where-it-ends-up",
     title: "Where It Ends Up",
     medium: "Video, sculpture",
@@ -803,14 +803,14 @@ export const projects: Project[] = [
     hidden: true,
     cover: onePiece01,
     theme: {
-      bg: "#fcd7e0",
+      bg: "#FFFAA0",
       text: "#013961",
       textSoft: "#4d7290",
     },
     sections: [
       {
         type: "intro",
-        body: ["Some drawings I made while watching One Piece."],
+        body: ["Some of the drawings I made of One Piece while watching One Piece."],
       },
       {
         type: "gallery",
