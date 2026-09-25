@@ -402,7 +402,7 @@ export default function DrawingCanvas() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl select-none rounded-sm border-2 border-[#0a0a6e] bg-[#c3c3c3] p-[3px] shadow-[4px_4px_0_rgba(0,0,0,0.25)]">
+    <div className="mx-auto w-full max-w-4xl select-none rounded-sm border-2 border-[#0a0a6e] bg-[#c3c3c3] p-[3px] shadow-[4px_4px_0_rgba(0,0,0,0.25)]">
       {/* title bar */}
       <div className="flex items-center justify-between rounded-t-[1px] bg-gradient-to-r from-[#000080] to-[#1c05a1] px-2 py-1">
         <span className="font-display text-xs text-white sm:text-sm">Paint</span>

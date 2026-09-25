@@ -32,31 +32,35 @@ export default function Nav() {
     };
   }, [open]);
 
+  const isHome = pathname === "/";
+
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-label={open ? "Close menu" : "Open menu"}
-        className="fixed top-5 left-5 sm:top-7 sm:left-7 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-ink/20 bg-paper/90 backdrop-blur-sm shadow-[0_2px_10px_rgba(51,38,43,0.08)] transition-transform hover:-rotate-6"
-      >
-        <span className="sr-only">Menu</span>
-        <span className="relative flex h-4 w-5 flex-col justify-between">
-          <motion.span
-            className="block h-[1.6px] w-full rounded-full bg-ink"
-            animate={open ? { y: 7, rotate: 45 } : { y: 0, rotate: 0 }}
-          />
-          <motion.span
-            className="block h-[1.6px] w-full rounded-full bg-ink"
-            animate={open ? { opacity: 0 } : { opacity: 1 }}
-          />
-          <motion.span
-            className="block h-[1.6px] w-full rounded-full bg-ink"
-            animate={open ? { y: -7, rotate: -45 } : { y: 0, rotate: 0 }}
-          />
-        </span>
-      </button>
+      {!isHome && (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="fixed top-5 left-5 sm:top-7 sm:left-7 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-ink/20 bg-paper/90 backdrop-blur-sm shadow-[0_2px_10px_rgba(51,38,43,0.08)] transition-transform hover:-rotate-6"
+        >
+          <span className="sr-only">Menu</span>
+          <span className="relative flex h-4 w-5 flex-col justify-between">
+            <motion.span
+              className="block h-[1.6px] w-full rounded-full bg-ink"
+              animate={open ? { y: 7, rotate: 45 } : { y: 0, rotate: 0 }}
+            />
+            <motion.span
+              className="block h-[1.6px] w-full rounded-full bg-ink"
+              animate={open ? { opacity: 0 } : { opacity: 1 }}
+            />
+            <motion.span
+              className="block h-[1.6px] w-full rounded-full bg-ink"
+              animate={open ? { y: -7, rotate: -45 } : { y: 0, rotate: 0 }}
+            />
+          </span>
+        </button>
+      )}
 
       <AnimatePresence>
         {open && (

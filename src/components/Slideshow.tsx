@@ -32,7 +32,7 @@ export default function Slideshow({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="relative flex h-[50vh] items-center justify-center sm:h-[70vh]">
+      <div className="relative flex h-[60vh] items-center justify-center sm:h-[80vh]">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={index}
@@ -81,26 +81,24 @@ export default function Slideshow({
         )}
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        {current.caption ? (
+      <div className="flex flex-col items-center gap-1 text-center">
+        {current.caption && (
           <p
             className={`text-sm ${captionColor ? "" : "text-accent"}`}
             style={captionColor ? { color: captionColor } : undefined}
           >
             {current.caption}
           </p>
-        ) : (
-          <span />
         )}
         {images.length > 1 && (
-          <span className="shrink-0 text-xs text-ink-soft">
+          <span className="text-xs text-ink-soft">
             {index + 1} / {images.length}
           </span>
         )}
       </div>
 
       {images.length > 1 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
           {images.map((img, i) => (
             <button
               key={i}

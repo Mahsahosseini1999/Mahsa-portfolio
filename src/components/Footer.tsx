@@ -14,8 +14,8 @@ export default function Footer() {
   const [noteIndex, setNoteIndex] = useState<number | null>(null);
 
   return (
-    <footer className="relative border-t border-ink/10 bg-paper-deep px-5 py-8 sm:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <footer className="relative border-t border-ink/10 bg-paper-deep px-5 py-8 sm:px-8 lg:px-12">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="font-display text-3xl">Mahsa Hosseini</p>
           <p className="mt-1 text-sm text-ink-soft">Groningen, Netherlands</p>
@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-6 flex max-w-6xl items-center justify-between">
+      <div className="mx-auto mt-6 flex max-w-7xl items-center justify-between">
         <p className="text-xs text-ink-soft">
           &copy; {new Date().getFullYear()} Mahsa Hosseini
         </p>

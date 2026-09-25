@@ -20,28 +20,48 @@ function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" 
       ? "grid-cols-1"
       : "grid-cols-2 sm:grid-cols-2";
   const sizeClass =
-    section.size === "sm" ? "mx-auto max-w-sm" : section.size === "lg" ? "w-[115%] -ml-[7.5%]" : "";
+    section.size === "sm"
+      ? "mx-auto max-w-sm"
+      : section.size === "lg"
+      ? "w-[108%] -ml-[4%]"
+      : "";
   const gapClass = section.gap === "loose" ? "gap-6 sm:gap-8" : "gap-3";
+  const uniform = section.images.length > 1;
   return (
     <div className={`flex flex-col gap-3 ${sizeClass}`}>
       <div className={`grid ${gapClass} ${colClass}`}>
         {section.images.map((img, j) => (
-          <div key={j} className="flex flex-col gap-2">
-            <div className="relative overflow-hidden rounded-sm bg-paper-deep">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                placeholder="blur"
-                sizes={section.size === "sm" ? "24rem" : "(min-width: 640px) 52vw, 90vw"}
-                className={`h-auto w-full object-cover ${
-                  section.treatment === "grain" ? "grain-treatment" : ""
-                }`}
-              />
+          <div key={j} className="flex h-full flex-col gap-2">
+            <div
+              className={`relative overflow-hidden rounded-sm bg-paper-deep ${
+                uniform ? "aspect-[4/3]" : "mx-auto w-fit"
+              }`}
+            >
+              {uniform ? (
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  placeholder="blur"
+                  fill
+                  sizes="(min-width: 640px) 45vw, 90vw"
+                  className={`object-cover ${section.treatment === "grain" ? "grain-treatment" : ""}`}
+                />
+              ) : (
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  placeholder="blur"
+                  sizes={section.size === "sm" ? "24rem" : "(min-width: 640px) 52vw, 90vw"}
+                  className={`h-auto max-h-[80vh] w-auto max-w-full object-contain ${
+                    section.treatment === "grain" ? "grain-treatment" : ""
+                  }`}
+                />
+              )}
             </div>
             {img.caption && (
               <p
-                className={`whitespace-pre-line text-sm ${section.captionColor ? "" : "text-accent"} ${
-                  section.images.length === 1 ? "text-center" : ""
+                className={`whitespace-pre-line text-center text-sm leading-snug ${
+                  section.captionColor ? "" : "text-accent"
                 }`}
                 style={section.captionColor ? { color: section.captionColor } : undefined}
               >
@@ -89,16 +109,22 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
   const project = getProject(slug);
   if (!project) notFound();
 
-  const index = projects.findIndex((p) => p.slug === slug);
-  const next = projects[(index + 1) % projects.length];
+  const visibleProjects = projects.filter((p) => !p.hidden);
+  const visibleIndex = visibleProjects.findIndex((p) => p.slug === slug);
+  const next =
+    visibleIndex === -1
+      ? visibleProjects[0]
+      : visibleProjects[(visibleIndex + 1) % visibleProjects.length];
 
-  const themeStyle: React.CSSProperties = { ["--accent" as string]: accentVar[project.accent] };
+  const themeStyle: React.CSSProperties & Record<string, string> = {
+    "--accent": accentVar[project.accent],
+  };
   if (project.theme) {
     themeStyle.background = project.theme.bg;
     themeStyle.color = project.theme.text;
-    themeStyle["--ink" as string] = project.theme.text;
-    themeStyle["--ink-soft" as string] = project.theme.textSoft;
-    if (project.theme.cardBg) themeStyle["--paper-deep" as string] = project.theme.cardBg;
+    themeStyle["--ink"] = project.theme.text;
+    themeStyle["--ink-soft"] = project.theme.textSoft;
+    if (project.theme.cardBg) themeStyle["--paper-deep"] = project.theme.cardBg;
   }
 
   return (
@@ -107,7 +133,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
       className="w-full min-h-screen overflow-x-hidden pt-20 pb-16"
       style={themeStyle}
     >
-      <div className="mx-auto w-full max-w-4xl px-5 sm:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
       <Link
         href="/projects"
         className="text-sm text-ink-soft hover:text-accent transition-colors"
@@ -144,12 +170,12 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
 
           if (section.type === "intro") {
             nodes.push(
-              <div key={i} className="flex flex-col gap-4">
+              <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
                 {section.body.map((p, j) => {
                   const link = section.links?.find((l) => p.includes(l.word));
                   if (!link) {
                     return (
-                      <p key={j} className="max-w-[72ch] whitespace-pre-line text-lg leading-relaxed">
+                      <p key={j} className="whitespace-pre-line text-lg leading-relaxed">
                         {p}
                       </p>
                     );
@@ -158,7 +184,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                   const before = p.slice(0, idx);
                   const after = p.slice(idx + link.word.length);
                   return (
-                    <p key={j} className="max-w-[72ch] whitespace-pre-line text-lg leading-relaxed">
+                    <p key={j} className="whitespace-pre-line text-lg leading-relaxed">
                       {before}
                       <a
                         href={link.href}
@@ -176,7 +202,13 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                 {section.poem && (
                   <div className="mt-2 flex flex-col gap-2">
                     {section.poem.lines.map((line, j) => (
-                      <p key={j} className="max-w-[72ch] text-lg italic leading-tight text-ink-soft">
+                      <p
+                        key={j}
+                        className={`text-lg leading-tight ${
+                          j === 0 ? "font-bold not-italic" : "italic"
+                        }`}
+                        style={{ color: section.poem?.color ?? undefined }}
+                      >
                         {line}
                       </p>
                     ))}
@@ -242,7 +274,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
             if (!boxed) {
               const titleColor = section.titleColor ?? section.lineColor;
               nodes.push(
-                <div key={i} className="flex flex-col gap-4">
+                <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
                   {wave}
                   <h2
                     className={`font-display text-3xl ${titleColor ? "" : "text-accent"}`}
@@ -253,7 +285,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                   {section.body?.map((p, j) => (
                     <p
                       key={j}
-                      className={`max-w-[72ch] whitespace-pre-line text-lg ${
+                      className={`whitespace-pre-line text-lg ${
                         p.includes("\n") ? "leading-tight" : "leading-relaxed"
                       }`}
                       style={titleColor ? { color: titleColor } : undefined}
@@ -263,17 +295,19 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                   ))}
                   {section.poem && (
                     <div className="mt-4 flex flex-col gap-2">
-                      <p
-                        className="max-w-[72ch] text-xl leading-relaxed"
-                        style={titleColor ? { color: titleColor } : undefined}
-                      >
-                        {section.poem.title}
-                      </p>
+                      {section.poem.title && (
+                        <p
+                          className="text-xl leading-relaxed"
+                          style={{ color: section.poem.color ?? titleColor ?? undefined }}
+                        >
+                          {section.poem.title}
+                        </p>
+                      )}
                       {section.poem.lines.map((line, j) => (
                         <p
                           key={j}
-                          className="max-w-[72ch] text-lg leading-tight"
-                          style={titleColor ? { color: titleColor } : undefined}
+                          className="text-lg leading-tight"
+                          style={{ color: section.poem?.color ?? titleColor ?? undefined }}
                         >
                           {line}
                         </p>
@@ -286,7 +320,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
             }
 
             nodes.push(
-              <div key={i} className="flex flex-col gap-4">
+              <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
                 {wave}
                 <div
                   className={`flex flex-col gap-3 rounded-2xl ${tilt} px-6 py-8 sm:px-9 ${
@@ -304,7 +338,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                     {section.title}
                   </h2>
                   {section.body?.map((p, j) => (
-                    <p key={j} className="max-w-[72ch] text-lg leading-relaxed">
+                    <p key={j} className="text-lg leading-relaxed">
                       {p}
                     </p>
                   ))}
@@ -338,18 +372,18 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                 alt={section.alt}
                 placeholder="blur"
                 sizes="90vw"
-                className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                className="h-auto max-h-[80vh] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
               />
             );
 
             nodes.push(
-              <div key={i} className="flex flex-col gap-2">
+              <div key={i} className="flex w-full flex-col gap-2">
                 {section.href ? (
                   <a
                     href={section.href}
                     target={section.href.startsWith("http") ? "_blank" : undefined}
                     rel={section.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="group relative block overflow-hidden rounded-sm bg-paper-deep"
+                    className="group relative block w-fit self-center overflow-hidden rounded-sm bg-paper-deep"
                   >
                     {stillImage}
                     {section.showPlayIcon !== false && (
@@ -363,7 +397,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                     )}
                   </a>
                 ) : (
-                  <div className="relative overflow-hidden rounded-sm bg-paper-deep">
+                  <div className="relative mx-auto w-fit overflow-hidden rounded-sm bg-paper-deep">
                     {stillImage}
                   </div>
                 )}

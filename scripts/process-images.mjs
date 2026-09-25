@@ -163,8 +163,8 @@ const jobs = [
     slug: "becoming-soil-lotus-graduation",
     dir: path.join(ROOT, "Becoming Soil ", "lutous ", "i myself grew from this murky soil"),
     files: [
-      "IMG_2668.jpg", "IMG_2722.jpg", "IMG_2724.jpg", "IMG_2759.jpg",
-      "IMG_2770.jpg", "IMG_2781.jpg", "IMG_2795.jpg",
+      "IMG_2596.jpg", "IMG_2724.jpg", "IMG_2759.jpg",
+      "IMG_2770.jpg", "IMG_2783.jpg", "IMG_2795.jpg",
     ],
   },
   {

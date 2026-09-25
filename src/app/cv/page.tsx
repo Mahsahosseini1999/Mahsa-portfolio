@@ -123,7 +123,7 @@ const exhibitions = [
 export default function CvPage() {
   return (
     <>
-      <main className="mx-auto w-full max-w-3xl px-5 pt-24 pb-20 sm:px-8">
+      <main className="mx-auto w-full max-w-4xl px-3 pt-24 pb-20 sm:px-5 lg:px-6">
         <h1 className="font-display text-[clamp(2.5rem,7vw,4.5rem)]">CV</h1>
 
         <div className="mt-16">

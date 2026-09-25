@@ -99,12 +99,12 @@ import lotusGlycerin06 from "@/assets/work/becoming-soil-lotus-glycerin/06.jpg";
 import lotusGlycerin07 from "@/assets/work/becoming-soil-lotus-glycerin/07.jpg";
 import lotusGlycerin08 from "@/assets/work/becoming-soil-lotus-glycerin/08.jpg";
 import lotusWholeProcess from "@/assets/work/becoming-soil-lotus-whole-process/01.jpg";
+import lotusGraduation01 from "@/assets/work/becoming-soil-lotus-graduation/01.jpg";
 import lotusGraduation02 from "@/assets/work/becoming-soil-lotus-graduation/02.jpg";
 import lotusGraduation03 from "@/assets/work/becoming-soil-lotus-graduation/03.jpg";
 import lotusGraduation04 from "@/assets/work/becoming-soil-lotus-graduation/04.jpg";
 import lotusGraduation05 from "@/assets/work/becoming-soil-lotus-graduation/05.jpg";
 import lotusGraduation06 from "@/assets/work/becoming-soil-lotus-graduation/06.jpg";
-import lotusGraduation07 from "@/assets/work/becoming-soil-lotus-graduation/07.jpg";
 import onePiece01 from "@/assets/work/one-piece/01.jpg";
 import onePiece02 from "@/assets/work/one-piece/02.jpg";
 import onePiece03 from "@/assets/work/one-piece/03.jpg";
@@ -118,7 +118,7 @@ export type Section =
       type: "intro";
       body: string[];
       links?: { word: string; href: string; color?: string }[];
-      poem?: { lines: string[] };
+      poem?: { lines: string[]; color?: string };
     }
   | {
       type: "heading";
@@ -129,7 +129,7 @@ export type Section =
       panelText?: string;
       lineColor?: string;
       titleColor?: string;
-      poem?: { title: string; lines: string[] };
+      poem?: { title?: string; lines: string[]; color?: string };
     }
   | {
       type: "gallery";
@@ -460,6 +460,7 @@ export const projects: Project[] = [
             "So that the me-ness in me may sever",
             "And reach to a we beyond",
           ],
+          color: "#4c1d95",
         },
       },
       {
@@ -467,12 +468,12 @@ export const projects: Project[] = [
         layout: "slideshow",
         captionColor: "#013961",
         images: [
-          { src: lotusGraduation05, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation01, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation02, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation03, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation04, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation05, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation06, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation07, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
         ],
       },
     ],
@@ -584,8 +585,16 @@ export const projects: Project[] = [
         lineColor: "#1c05a1",
         body: [
           "A human figure built entirely from discarded cables found at the facility.",
-          "Drowning without noticing\nCables are everywhere\nnot always visible but they surround me\nThe world is vast and fast,\nThe more I look the more I stoop into it and it easily drowns me\na blackhole filled with data",
         ],
+        poem: {
+          lines: [
+            "Drowning without noticing.",
+            "Cables are everywhere, not always visible but they surround me.",
+            "The world is vast and fast.",
+            "The more I look the more I stoop into it and it easily drowns me.",
+            "a blackhole filled with data.",
+          ],
+        },
       },
       {
         type: "gallery",
