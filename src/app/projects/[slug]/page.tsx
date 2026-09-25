@@ -22,6 +22,8 @@ function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" 
   const sizeClass =
     section.size === "sm"
       ? "mx-auto max-w-sm"
+      : section.size === "md"
+      ? "mx-auto max-w-xl"
       : section.size === "lg"
       ? "w-[108%] -ml-[4%]"
       : section.images.length === 1
@@ -252,7 +254,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
             if (boxed && section.panelBg && nextSection?.type === "gallery") {
               nodes.push(
                 <div key={i} className="flex flex-col gap-4">
-                  {wave}
+                  {!section.hideWave && wave}
                   <div
                     className="flex flex-col gap-8 rounded-2xl px-7 py-10 sm:px-12 sm:py-14"
                     style={{ background: section.panelBg, color: section.panelText }}
@@ -277,7 +279,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
               const titleColor = section.titleColor ?? section.lineColor;
               nodes.push(
                 <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
-                  {wave}
+                  {!section.hideWave && wave}
                   <h2
                     className={`font-display text-3xl ${titleColor ? "" : "text-accent"}`}
                     style={titleColor ? { color: titleColor } : undefined}
@@ -323,7 +325,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
 
             nodes.push(
               <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
-                {wave}
+                {!section.hideWave && wave}
                 <div
                   className={`flex flex-col gap-3 rounded-2xl ${tilt} px-6 py-8 sm:px-9 ${
                     section.panelBg ? "" : tint
@@ -379,7 +381,12 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
             );
 
             nodes.push(
-              <div key={i} className="flex w-full flex-col gap-2">
+              <div
+                key={i}
+                className={`flex w-full flex-col gap-2 ${
+                  section.size === "lg" ? "" : "mx-auto max-w-4xl"
+                }`}
+              >
                 {section.href ? (
                   <a
                     href={section.href}

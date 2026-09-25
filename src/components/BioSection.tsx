@@ -13,7 +13,7 @@ export default function BioSection() {
         <p className="flex items-center gap-2">
           She is a serious One Piece fan.
           <Link href="/projects/one-piece" aria-label="One Piece — a straw hat" className="inline-block shrink-0 opacity-90 transition-opacity hover:opacity-100">
-            <svg viewBox="0 0 100 70" width="34" height="24" fill="none">
+            <svg viewBox="0 0 100 70" width="40" height="28" fill="none">
               <ellipse cx="50" cy="30" rx="46" ry="10" fill="#ffd400" stroke="#013961" strokeWidth="2.4" />
               <path d="M22 30c0-14 12-24 28-24s28 10 28 24" fill="#ffd400" stroke="#013961" strokeWidth="2.4" />
               <rect x="22" y="26" width="56" height="8" rx="1" fill="#ff2e63" />

@@ -129,6 +129,7 @@ export type Section =
       panelText?: string;
       lineColor?: string;
       titleColor?: string;
+      hideWave?: boolean;
       poem?: { title?: string; lines: string[]; color?: string };
     }
   | {
@@ -139,7 +140,7 @@ export type Section =
       layout?: "slideshow";
       caption?: string;
       columns?: number;
-      size?: "sm" | "lg";
+      size?: "sm" | "md" | "lg";
       gap?: "loose";
     }
   | {
@@ -151,6 +152,7 @@ export type Section =
       showPlayIcon?: boolean;
       caption?: string;
       captionColor?: string;
+      size?: "lg";
     }
   | {
       type: "marquee";
@@ -370,6 +372,7 @@ export const projects: Project[] = [
       },
       {
         type: "gallery",
+        size: "md",
         images: [{ src: lotusProcess1, alt: "Lotus leaves soaking in water" }],
       },
       {
@@ -576,6 +579,7 @@ export const projects: Project[] = [
         showPlayIcon: false,
         caption: "Where It Ends Up, 2025. Video still.",
         captionColor: "#1c05a1",
+        size: "lg",
       },
       {
         type: "heading",
@@ -689,7 +693,7 @@ export const projects: Project[] = [
         type: "heading",
         title: "Chairs",
         boxed: false,
-        titleColor: "var(--lavender)",
+        titleColor: "#1c05a1",
         lineColor: "#1c05a1",
         body: [
           "Four chairs. Two face each other. Two sit back to back.",
@@ -698,9 +702,8 @@ export const projects: Project[] = [
       },
       {
         type: "gallery",
-        captionColor: "var(--lavender)",
+        captionColor: "#1c05a1",
         caption: "Chairs, 2020. Metal and bolts, 27 × 12 × 15 cm each.",
-        size: "lg",
         images: [
           { src: chairs01, alt: "Sculpture of a set of chairs" },
         ],
@@ -708,6 +711,7 @@ export const projects: Project[] = [
       {
         type: "heading",
         title: "Tehran",
+        hideWave: true,
         body: [
           "Tehran.",
           "Fridays I drove around the city with no destination and a compact camera.",
@@ -737,7 +741,7 @@ export const projects: Project[] = [
         type: "heading",
         title: "Hand to Hand",
         boxed: false,
-        titleColor: "var(--skyblue)",
+        titleColor: "#1c05a1",
         lineColor: "#1c05a1",
         body: [
           "Footage of a dance at a wedding, processed until only the movement is left.",
