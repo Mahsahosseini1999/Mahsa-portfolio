@@ -24,6 +24,8 @@ function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" 
       ? "mx-auto max-w-sm"
       : section.size === "md"
       ? "mx-auto max-w-xl"
+      : section.size === "compact"
+      ? "mx-auto max-w-3xl"
       : section.size === "lg"
       ? "w-[108%] -ml-[4%]"
       : section.images.length === 1
@@ -128,6 +130,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
     themeStyle.color = project.theme.text;
     themeStyle["--ink"] = project.theme.text;
     themeStyle["--ink-soft"] = project.theme.textSoft;
+    themeStyle["--accent"] = project.theme.text;
     if (project.theme.cardBg) themeStyle["--paper-deep"] = project.theme.cardBg;
   }
 

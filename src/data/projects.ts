@@ -140,7 +140,7 @@ export type Section =
       layout?: "slideshow";
       caption?: string;
       columns?: number;
-      size?: "sm" | "md" | "lg";
+      size?: "sm" | "md" | "compact" | "lg";
       gap?: "loose";
     }
   | {
@@ -471,9 +471,9 @@ export const projects: Project[] = [
         captionColor: "#013961",
         images: [
           { src: lotusGraduation01, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation04, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation02, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation03, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation04, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation05, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
           { src: lotusGraduation06, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
         ],
@@ -702,8 +702,9 @@ export const projects: Project[] = [
       },
       {
         type: "gallery",
+        size: "compact",
         captionColor: "#1c05a1",
-        caption: "Chairs, 2020. Metal and bolts, 27 × 12 × 15 cm each.",
+        caption: "Chairs, 2020. Iron and bolts, 27 × 12 × 15 cm each.",
         images: [
           { src: chairs01, alt: "Sculpture of a set of chairs" },
         ],
