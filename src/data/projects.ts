@@ -370,7 +370,6 @@ export const projects: Project[] = [
       },
       {
         type: "gallery",
-        size: "sm",
         images: [{ src: lotusProcess1, alt: "Lotus leaves soaking in water" }],
       },
       {

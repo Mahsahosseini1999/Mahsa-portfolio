@@ -24,6 +24,8 @@ function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" 
       ? "mx-auto max-w-sm"
       : section.size === "lg"
       ? "w-[108%] -ml-[4%]"
+      : section.images.length === 1
+      ? "mx-auto max-w-4xl"
       : "";
   const gapClass = section.gap === "loose" ? "gap-6 sm:gap-8" : "gap-3";
   const uniform = section.images.length > 1;
