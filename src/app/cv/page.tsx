@@ -6,10 +6,10 @@ export const metadata: Metadata = {
 };
 
 const statement = [
-  "My work begins with questions and concerns that come from my own life. I work across drawing, installation, video, sound and photography, and I let each idea find the medium it needs.",
-  "Attentiveness has become my method. I pay attention to details and to what the materials do. I try to let go of control, responding to what happens rather than deciding everything in advance, and I accept that I cannot fully know what the outcome will be.",
-  "My process is slow and repeated. During the exhibition \"I grew from this murky soil\", I watered the soil every day so that the smell of soil and lotus would come out and the leaves would not become too dry. A simple act of care became a ritual of my own.",
-  "I am interested in what our actions leave behind, in the earth and in each other. I want the audience to do more than look, to notice what is happening in front of them and their own part in it.",
+  "I am interested in what our actions leave behind, in the earth, on nonhumans and on humans. I work across drawing, installation, video, sound and photography, selecting the medium by intuition and by the physical and sensory conditions each project asks for.",
+  "I am developing a practice of close observation and responsiveness to what materials do. I try to let go of control. Wind and mold have changed my works, and I let those changes become part of them.",
+  "My process is slow and repeated. I drew the same pregnant body again and again. During the exhibition I grew from this murky soil, I watered the soil almost every hour. Through these repeated acts I make rituals of my own.",
+  "I want the audience to do more than look.",
 ];
 
 const education = [
