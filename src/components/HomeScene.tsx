@@ -147,7 +147,7 @@ const trinkets: Trinket[] = [
     ),
   },
   {
-    href: "/projects/in-the-ground",
+    href: "/projects/becoming-soil",
     label: "In the Ground — a sprout",
     depth: 46,
     rotate: 6,

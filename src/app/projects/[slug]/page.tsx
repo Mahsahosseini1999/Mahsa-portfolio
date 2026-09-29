@@ -479,14 +479,25 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
       )}
 
       <div className="mt-16 border-t border-ink/10 pt-8">
-        <Link href={`/projects/${next.slug}`} className="group inline-flex flex-col">
-          <span className="text-xs uppercase tracking-[0.14em] text-ink-soft">
-            Next
-          </span>
-          <span className="font-display text-3xl group-hover:text-accent transition-colors">
-            {next.title}
-          </span>
-        </Link>
+        {project.hidden ? (
+          <Link href="/" className="group inline-flex flex-col">
+            <span className="text-xs uppercase tracking-[0.14em] text-ink-soft">
+              Back to
+            </span>
+            <span className="font-display text-3xl group-hover:text-accent transition-colors">
+              Home
+            </span>
+          </Link>
+        ) : (
+          <Link href={`/projects/${next.slug}`} className="group inline-flex flex-col">
+            <span className="text-xs uppercase tracking-[0.14em] text-ink-soft">
+              Next
+            </span>
+            <span className="font-display text-3xl group-hover:text-accent transition-colors">
+              {next.title}
+            </span>
+          </Link>
+        )}
       </div>
       </div>
     </main>

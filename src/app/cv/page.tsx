@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const statement = [
   "I am interested in what our actions leave behind, in the earth, on nonhumans and on humans. I work across drawing, installation, video, sound and photography, selecting the medium by intuition and by the physical and sensory conditions each project asks for.",
   "I am developing a practice of close observation and responsiveness to what materials do. I try to let go of control. Wind and mold have changed my works, and I let those changes become part of them.",
-  "My process is slow and repeated. I drew the same pregnant body again and again. During the exhibition I grew from this murky soil, I watered the soil almost every hour. Through these repeated acts I make rituals of my own.",
+  "My process is slow and repeated. I drew the same pregnant body again and again. During the exhibition “I Myself Grew From This Murky Soil,” I watered the soil almost every hour. Through these repeated acts I make rituals of my own.",
   "I want the audience to do more than look.",
 ];
 
@@ -87,7 +87,6 @@ const workshops = [
     title: "Landscape Crafting",
     instructor: "Led by Holy Dale and Willie Vogel",
     years: "2025",
-    place: "Exhibited at OMI, Rotterdam (May 2026)",
   },
 ];
 
@@ -245,7 +244,6 @@ export default function CvPage() {
                   <span className="text-base text-ink-soft">{w.years}</span>
                 </div>
                 <span className="text-base text-ink-soft">{w.instructor}</span>
-                <span className="text-base text-ink-soft">{w.place}</span>
               </div>
             ))}
           </div>

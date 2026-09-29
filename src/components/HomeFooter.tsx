@@ -33,7 +33,7 @@ export default function HomeFooter() {
           </svg>
         </a>
         <a
-          href="https://www.youtube.com"
+          href="https://youtube.com/@mahsahosseini99"
           target="_blank"
           rel="noreferrer"
           aria-label="YouTube"

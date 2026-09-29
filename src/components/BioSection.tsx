@@ -21,7 +21,7 @@ export default function BioSection() {
           </Link>
         </p>
         <p>Her mind is sometimes chaos; her room never is.</p>
-        <p>She makes things. collects materials. gets obsessed with stuff. changes her mind.</p>
+        <p>She makes things. Collects materials. Gets obsessed with stuff. Changes her mind.</p>
         <p>There is probably a more professional way to explain all of this.</p>
       </div>
     </section>

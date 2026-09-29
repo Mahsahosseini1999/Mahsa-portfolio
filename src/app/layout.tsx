@@ -16,7 +16,7 @@ const karla = Karla({
 
 export const metadata: Metadata = {
   title: "Mahsa Hosseini",
-  description: "Mahsa Hosseini — multidisciplinary artist. Drawing, sculpture, photography, video.",
+  description: "Mahsa Hosseini, multidisciplinary artist",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

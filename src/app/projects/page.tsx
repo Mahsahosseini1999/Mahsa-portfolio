@@ -31,7 +31,7 @@ export default function ProjectsPage() {
           >
             <div
               className={`relative aspect-[4/3] overflow-hidden rounded-sm bg-paper-deep ${
-                project.slug === "in-the-ground"
+                project.slug === "becoming-soil"
                   ? "border-2 border-[#7c3aed]"
                   : "border border-ink/15"
               }`}
