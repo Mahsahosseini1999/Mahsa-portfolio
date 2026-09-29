@@ -19,6 +19,10 @@ type Trinket = {
   roamYMobile: number[];
   roamXDesktop: number[];
   roamYDesktop: number[];
+  // Optional overrides used only below 640px, to keep title/subtitle clear
+  // without touching the shared tablet layout (640–1199px uses *Mobile).
+  topSmall?: number;
+  roamYSmall?: number[];
   node: React.ReactNode;
 };
 
@@ -47,6 +51,8 @@ const trinkets: Trinket[] = [
     topDesktop: 20,
     roamXMobile: [0, 9, 4, -6, 0],
     roamYMobile: [0, -6, -9, -4, 0],
+    topSmall: 34,
+    roamYSmall: [0, -6, -9, -4, 0],
     roamXDesktop: [0, 6, 3, -4, 0],
     roamYDesktop: [0, -4, -6, -3, 0],
     size: "w-28 sm:w-44",
@@ -74,6 +80,8 @@ const trinkets: Trinket[] = [
     topDesktop: 12,
     roamXMobile: [0, -8, -4, 7, 0],
     roamYMobile: [0, 7, 9, 5, 0],
+    topSmall: 25,
+    roamYSmall: [0, 7, 9, 5, 0],
     roamXDesktop: [0, -5, -3, 5, 0],
     roamYDesktop: [0, 5, 6, 3, 0],
     size: "w-28 sm:w-40",
@@ -180,6 +188,8 @@ const trinkets: Trinket[] = [
     topDesktop: 44,
     roamXMobile: [0, 7, 9, 6, 0],
     roamYMobile: [0, -6, -1, 5, 0],
+    topSmall: 31,
+    roamYSmall: [0, -6, -1, 5, 0],
     roamXDesktop: [0, 5, 6, 4, 0],
     roamYDesktop: [0, -4, -1, 3, 0],
     size: "w-24 sm:w-36",
@@ -197,6 +207,17 @@ export default function HomeScene() {
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 60, damping: 18 });
   const sy = useSpring(my, { stiffness: 60, damping: 18 });
+  const [ready, setReady] = useState<{ mounted: boolean; isSmall: boolean }>({
+    mounted: false,
+    isSmall: false,
+  });
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const update = () => setReady({ mounted: true, isSmall: mq.matches });
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
     const rect = ref.current?.getBoundingClientRect();
@@ -211,9 +232,10 @@ export default function HomeScene() {
       onPointerMove={onPointerMove}
       className="relative flex min-h-[calc(100svh-1px)] flex-col items-center justify-center overflow-hidden px-6 text-center"
     >
-      {trinkets.map((t) => (
-        <Piece key={t.href} trinket={t} sx={sx} sy={sy} />
-      ))}
+      {ready.mounted &&
+        trinkets.map((t) => (
+          <Piece key={t.href} trinket={t} sx={sx} sy={sy} isSmallMobile={ready.isSmall} />
+        ))}
 
       <motion.div
         initial={{ opacity: 0, y: -16 }}
@@ -234,18 +256,28 @@ function Piece({
   trinket,
   sx,
   sy,
+  isSmallMobile,
 }: {
   trinket: Trinket;
   sx: ReturnType<typeof useSpring>;
   sy: ReturnType<typeof useSpring>;
+  isSmallMobile: boolean;
 }) {
   const x = useTransform(sx, (v) => v * trinket.depth);
   const y = useTransform(sy, (v) => v * trinket.depth);
   const isDesktop = useIsDesktop();
   const left = isDesktop ? trinket.leftDesktop : trinket.leftMobile;
-  const top = isDesktop ? trinket.topDesktop : trinket.topMobile;
+  const top = isDesktop
+    ? trinket.topDesktop
+    : isSmallMobile && trinket.topSmall !== undefined
+      ? trinket.topSmall
+      : trinket.topMobile;
   const roamX = isDesktop ? trinket.roamXDesktop : trinket.roamXMobile;
-  const roamY = isDesktop ? trinket.roamYDesktop : trinket.roamYMobile;
+  const roamY = isDesktop
+    ? trinket.roamYDesktop
+    : isSmallMobile && trinket.roamYSmall !== undefined
+      ? trinket.roamYSmall
+      : trinket.roamYMobile;
 
   return (
     <motion.div

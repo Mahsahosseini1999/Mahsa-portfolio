@@ -8,7 +8,7 @@ export default function BioSection() {
         <p>
           This is the website of Mahsa,
           <br />
-          a multidisciplinary artist born in December 1999 (yes, from a century ago).
+          a multidisciplinary artist born in December 1999.
         </p>
         <p className="flex items-center gap-2">
           She is a serious One Piece fan.

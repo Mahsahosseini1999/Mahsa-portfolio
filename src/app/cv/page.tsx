@@ -76,7 +76,7 @@ const experience = [
 const residencies = [
   {
     title: "E-waste Recycling Center Residency",
-    instructor: "Organised by Luuk Schröder",
+    instructor: "Organized by Luuk Schröder",
     years: "2025",
     place: "Apeldoorn",
   },
