@@ -363,7 +363,7 @@ export const projects: Project[] = [
       },
       {
         type: "heading",
-        title: "I myself grew from murky soil.",
+        title: "I Myself Grew From Murky Soil.",
         boxed: false,
         body: [
           "In my earlier works, I kept using processed, factory-made paper. I wanted a surface that could be in dialogue with the soil, something from the same family. While researching, I came across the lotus. The flower rises from the mud towards the sun and blooms without being stained by it. In Buddhism, it stands for purity and awakening. That was what drew me to it.",
@@ -476,12 +476,12 @@ export const projects: Project[] = [
         layout: "slideshow",
         captionColor: "#013961",
         images: [
-          { src: lotusGraduation01, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation04, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation02, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation03, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation05, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
-          { src: lotusGraduation06, alt: "Graduation installation, A-kerk, Groningen", caption: "I myself grew from this murky soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation01, alt: "Graduation installation, A-kerk, Groningen", caption: "I Myself Grew From This Murky Soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation04, alt: "Graduation installation, A-kerk, Groningen", caption: "I Myself Grew From This Murky Soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation02, alt: "Graduation installation, A-kerk, Groningen", caption: "I Myself Grew From This Murky Soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation03, alt: "Graduation installation, A-kerk, Groningen", caption: "I Myself Grew From This Murky Soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation05, alt: "Graduation installation, A-kerk, Groningen", caption: "I Myself Grew From This Murky Soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
+          { src: lotusGraduation06, alt: "Graduation installation, A-kerk, Groningen", caption: "I Myself Grew From This Murky Soil, 244 × 244 cm, gardening soil, soil on lotus leaves, 2026, installation view." },
         ],
       },
     ],

@@ -490,7 +490,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
       </div>
       </div>
     </main>
-    <Footer />
+    <Footer theme={project.theme} />
     </>
   );
 }

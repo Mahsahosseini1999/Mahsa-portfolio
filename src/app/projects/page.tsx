@@ -29,7 +29,13 @@ export default function ProjectsPage() {
             className="group block"
             style={{ ["--accent" as string]: project.theme?.bg ?? accentVar[project.accent] }}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-ink/15 bg-paper-deep">
+            <div
+              className={`relative aspect-[4/3] overflow-hidden rounded-sm bg-paper-deep ${
+                project.slug === "in-the-ground"
+                  ? "border-2 border-[#7c3aed]"
+                  : "border border-ink/15"
+              }`}
+            >
               {project.cover ? (
                 <Image
                   src={project.cover}

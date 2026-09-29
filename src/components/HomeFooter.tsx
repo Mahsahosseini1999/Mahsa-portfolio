@@ -44,6 +44,17 @@ export default function HomeFooter() {
             <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" />
           </svg>
         </a>
+        <a
+          href="https://mahsa.bandcamp.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Bandcamp"
+          className="text-ink transition-colors hover:text-accent"
+        >
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4.5l16 7.5-16 7.5z" fill="currentColor" />
+          </svg>
+        </a>
       </div>
     </footer>
   );

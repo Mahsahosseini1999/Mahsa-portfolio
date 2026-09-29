@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { motion } from "framer-motion";
 
 const notes = [
@@ -10,11 +10,29 @@ const notes = [
   "her room is never chaos",
 ];
 
-export default function Footer() {
+type FooterTheme = {
+  bg: string;
+  text: string;
+  textSoft: string;
+};
+
+export default function Footer({ theme }: { theme?: FooterTheme }) {
   const [noteIndex, setNoteIndex] = useState<number | null>(null);
 
+  const style = theme
+    ? ({
+        background: theme.bg,
+        color: theme.text,
+        "--ink": theme.text,
+        "--ink-soft": theme.textSoft,
+      } as CSSProperties & Record<string, string>)
+    : undefined;
+
   return (
-    <footer className="relative border-t border-ink/10 bg-paper-deep px-5 py-8 sm:px-8 lg:px-12">
+    <footer
+      className={`relative border-t border-ink/10 px-5 py-8 sm:px-8 lg:px-12 ${theme ? "" : "bg-paper-deep"}`}
+      style={style}
+    >
       <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="font-display text-3xl">Mahsa Hosseini</p>
@@ -62,6 +80,17 @@ export default function Footer() {
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <rect x="2" y="5.5" width="20" height="13" rx="4" stroke="currentColor" strokeWidth="1.4" />
                 <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" />
+              </svg>
+            </a>
+            <a
+              href="https://mahsa.bandcamp.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Bandcamp"
+              className="text-ink transition-colors hover:text-accent"
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4.5l16 7.5-16 7.5z" fill="currentColor" />
               </svg>
             </a>
           </div>
