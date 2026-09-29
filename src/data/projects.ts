@@ -428,7 +428,13 @@ export const projects: Project[] = [
       {
         type: "gallery",
         size: "sm",
-        images: [{ src: lotusWholeProcess, alt: "Whole lotus leaf soil drawing process" }],
+        images: [
+          {
+            src: lotusWholeProcess,
+            alt: "Whole lotus leaf soil drawing process",
+            caption: "Soil on lotus leaf, 2026",
+          },
+        ],
       },
       {
         type: "intro",
