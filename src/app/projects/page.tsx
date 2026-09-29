@@ -27,15 +27,14 @@ export default function ProjectsPage() {
             key={project.slug}
             href={`/projects/${project.slug}`}
             className="group block"
-            style={{ ["--accent" as string]: project.theme?.bg ?? accentVar[project.accent] }}
-          >
-            <div
-              className={`relative aspect-[4/3] overflow-hidden rounded-sm bg-paper-deep ${
+            style={{
+              ["--accent" as string]:
                 project.slug === "becoming-soil"
-                  ? "border-2 border-[#7c3aed]"
-                  : "border border-ink/15"
-              }`}
-            >
+                  ? "#7c3aed"
+                  : (project.theme?.bg ?? accentVar[project.accent]),
+            }}
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-ink/15 bg-paper-deep">
               {project.cover ? (
                 <Image
                   src={project.cover}
