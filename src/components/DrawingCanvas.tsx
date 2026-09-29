@@ -190,7 +190,7 @@ export default function DrawingCanvas() {
   const [tool, setTool] = useState<Tool>("pencil");
   const [color, setColor] = useState("#013961");
   const [textInput, setTextInput] = useState<{ x: number; y: number; value: string } | null>(null);
-  const [sentState, setSentState] = useState<"idle" | "sent">("idle");
+  const [sentState, setSentState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const textInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -388,15 +388,16 @@ export default function DrawingCanvas() {
         }
       }
 
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "drawing-for-mahsa.png";
-      a.click();
-      URL.revokeObjectURL(url);
-      window.location.href =
-        "mailto:Hosseiniii.mahsaa@gmail.com?subject=A%20drawing%20for%20you&body=I%20made%20this%20on%20your%20site%20—%20attaching%20the%20image%20that%20just%20downloaded!";
-      setSentState("sent");
+      setSentState("sending");
+      try {
+        const body = new FormData();
+        body.append("drawing", blob, "drawing-for-mahsa.png");
+        const res = await fetch("/api/send-drawing", { method: "POST", body });
+        if (!res.ok) throw new Error("failed");
+        setSentState("sent");
+      } catch {
+        setSentState("error");
+      }
       setTimeout(() => setSentState("idle"), 3000);
     }, "image/png");
   }
@@ -531,9 +532,16 @@ export default function DrawingCanvas() {
             type="button"
             title="send to mahsa"
             onClick={handleSend}
-            className="border border-[#7f7f7f] bg-[#c3c3c3] px-4 py-1 text-xs text-black shadow-[1px_1px_0_#fff] hover:bg-[#d4d4d4] active:shadow-[inset_1px_1px_0_rgba(0,0,0,0.4)]"
+            disabled={sentState === "sending"}
+            className="border border-[#7f7f7f] bg-[#c3c3c3] px-4 py-1 text-xs text-black shadow-[1px_1px_0_#fff] hover:bg-[#d4d4d4] active:shadow-[inset_1px_1px_0_rgba(0,0,0,0.4)] disabled:opacity-60"
           >
-            {sentState === "sent" ? "Sent!" : "Send"}
+            {sentState === "sending"
+              ? "Sending…"
+              : sentState === "sent"
+                ? "Sent!"
+                : sentState === "error"
+                  ? "Couldn't send"
+                  : "Send"}
           </button>
         </div>
       </div>
