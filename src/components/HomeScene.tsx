@@ -7,6 +7,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 type Trinket = {
   href: string;
   label: string;
+  title: string;
   depth: number;
   size: string;
   leftMobile: number;
@@ -42,6 +43,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/interrelation",
     label: "Interrelation — a set of chairs",
+    title: "Interrelation",
     depth: 26,
     rotate: -8,
     floatDuration: 16,
@@ -71,6 +73,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/where-it-ends-up",
     label: "Where It Ends Up — cables",
+    title: "Where It Ends Up",
     depth: 40,
     rotate: 14,
     floatDuration: 19,
@@ -94,6 +97,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/arc-of-birth",
     label: "Arc of Birth — a scribble",
+    title: "Arc of Birth",
     depth: 55,
     rotate: -18,
     floatDuration: 14,
@@ -115,6 +119,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/brick-ballet",
     label: "Brick Ballet — a footprint",
+    title: "Brick Ballet",
     depth: 20,
     rotate: 10,
     floatDuration: 21,
@@ -136,6 +141,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/people-places-time",
     label: "People, Places, Time — a photo corner",
+    title: "People, Places, Time",
     depth: 34,
     rotate: -22,
     floatDuration: 17,
@@ -157,6 +163,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/becoming-soil",
     label: "In the Ground — a sprout",
+    title: "Becoming Soil",
     depth: 46,
     rotate: 6,
     floatDuration: 18,
@@ -179,6 +186,7 @@ const trinkets: Trinket[] = [
   {
     href: "/projects/the-g-word",
     label: "The G Word — a gun",
+    title: "The G Word",
     depth: 30,
     rotate: -14,
     floatDuration: 20,
@@ -306,9 +314,18 @@ function Piece({
           <Link
             href={trinket.href}
             aria-label={trinket.label}
-            className="block opacity-90 transition-opacity hover:opacity-100"
+            className="group/trinket relative block opacity-90 transition-opacity hover:opacity-100"
           >
-            <motion.div whileHover={{ rotate: 4, scale: 1.06 }}>{trinket.node}</motion.div>
+            <motion.div
+              whileHover={{ rotate: 4, scale: 1.14 }}
+              transition={{ type: "spring", stiffness: 300, damping: 14 }}
+              className="drop-shadow-none transition-[filter] duration-200 group-hover/trinket:drop-shadow-[0_10px_18px_rgba(1,57,97,0.3)]"
+            >
+              {trinket.node}
+            </motion.div>
+            <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-full bg-[#013961] px-3 py-1 font-display text-xs text-white opacity-0 shadow-md transition-all duration-200 group-hover/trinket:translate-y-0 group-hover/trinket:opacity-100">
+              {trinket.title}
+            </span>
           </Link>
         </motion.div>
       </motion.div>
