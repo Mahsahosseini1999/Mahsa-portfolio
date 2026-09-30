@@ -437,7 +437,7 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "My graduation exhibition took place in the A-kerk, a church in Groningen. I made an installation: a square filled with soil, with lotus leaves arranged in a circle, from slightly fresher leaves to torn ones to small pieces at the start of decay. In the middle of the garden soil, I placed cemetery soil, and during the exhibition, a small plant began to grow.\nThe installation was interactive. People could touch and play with the soil, and it held their imprints.\nNext to it were the stairs to the pulpit, a place visitors are usually not allowed to enter. This time, I was the one speaking: the soundscape and the poem.\nBy the end, the soil carried the traces of everyone who had played in it. Decay is not an end. It is transformation.",
+          "My graduation exhibition took place in the A-kerk, a church in Groningen. I made an installation: a square filled with soil, with lotus leaves arranged in a circle, from slightly fresher leaves to torn ones at the start of decay. In the middle of the garden soil, I placed cemetery soil, and during the exhibition, a small plant began to grow.\nThe installation was interactive. People could touch and play with the soil, and it held their imprints.\nNext to it were the stairs to the pulpit, a place visitors are usually not allowed to enter. This time, I was the one speaking: the soundscape and the poem.\nBy the end, the soil carried the traces of everyone who had played in it. Decay is not an end. It is transformation.",
         ],
         links: [
           {
