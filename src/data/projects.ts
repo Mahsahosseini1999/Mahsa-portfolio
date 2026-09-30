@@ -80,6 +80,7 @@ import stripe14 from "@/assets/work/becoming-soil-storylines-stripes/14.jpg";
 import stripe15 from "@/assets/work/becoming-soil-storylines-stripes/15.jpg";
 import stripe16 from "@/assets/work/becoming-soil-storylines-stripes/16.jpg";
 import lotusProcess1 from "@/assets/work/becoming-soil-lotus-process1/01.jpg";
+import lotusProcess2 from "@/assets/work/becoming-soil-lotus-process1/02.jpg";
 import lotusNotPreserved01 from "@/assets/work/becoming-soil-lotus-not-preserved/01.jpg";
 import lotusNotPreserved02 from "@/assets/work/becoming-soil-lotus-not-preserved/02.jpg";
 import lotusNotPreserved03 from "@/assets/work/becoming-soil-lotus-not-preserved/03.jpg";
@@ -371,7 +372,10 @@ export const projects: Project[] = [
       {
         type: "gallery",
         size: "md",
-        images: [{ src: lotusProcess1, alt: "Lotus leaves soaking in water" }],
+        images: [
+          { src: lotusProcess1, alt: "Lotus leaves soaking in water" },
+          { src: lotusProcess2, alt: "Lotus leaves soaking in water" },
+        ],
       },
       {
         type: "intro",

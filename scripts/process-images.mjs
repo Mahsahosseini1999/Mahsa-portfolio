@@ -136,7 +136,7 @@ const jobs = [
   {
     slug: "becoming-soil-lotus-process1",
     dir: path.join(ROOT, "Becoming Soil ", "lutous "),
-    files: ["process1.jpg"],
+    files: ["process1.jpg", "process.jpg"],
   },
   {
     slug: "becoming-soil-lotus-not-preserved",

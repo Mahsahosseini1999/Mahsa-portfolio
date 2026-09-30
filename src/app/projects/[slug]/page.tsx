@@ -21,11 +21,11 @@ function GalleryGrid({ section }: { section: Extract<Section, { type: "gallery" 
       : "grid-cols-2 sm:grid-cols-2";
   const sizeClass =
     section.size === "sm"
-      ? "mx-auto max-w-sm"
+      ? "w-full mx-auto max-w-sm"
       : section.size === "md"
-      ? "mx-auto max-w-xl"
+      ? "w-full mx-auto max-w-xl"
       : section.size === "compact"
-      ? "mx-auto max-w-3xl"
+      ? "w-full mx-auto max-w-3xl"
       : section.size === "lg"
       ? "w-[108%] -ml-[4%]"
       : section.images.length === 1
