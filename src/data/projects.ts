@@ -734,12 +734,12 @@ export const projects: Project[] = [
         captionColor: "var(--pink)",
         gap: "loose",
         images: [
-          { src: tehran01, alt: "Milad Tower seen through a car window, Tehran", caption: "Milad, 2023.\nDigital photo, 3648 × 2736 px." },
-          { src: tehran02, alt: "Night street in Tehran", caption: "Sohrevardi, 2023.\nDigital photo, 3648 × 2736 px." },
-          { src: tehran03, alt: "Street scene, Tehran", caption: "Bookan, 2022.\nDigital photo, 3648 × 2736 px." },
-          { src: tehran04, alt: "Street scene, Tehran", caption: "Tajrish Square, 2022.\nDigital photo, 3648 × 2736 px." },
-          { src: tehran05, alt: "Alley with graffiti and a painted door, Tehran", caption: "Fereshteh, 2022.\nDigital photo, 3648 × 2736 px." },
-          { src: tehran06, alt: "Skyscrapers and a busy intersection, Tehran", caption: "Arjantin, 2023.\nDigital photo, 3648 × 2736 px." },
+          { src: tehran01, alt: "Milad Tower seen through a car window, Tehran", caption: "Milad, 2023.\nSnapshot, 3648 × 2736 px." },
+          { src: tehran02, alt: "Night street in Tehran", caption: "Sohrevardi, 2023.\nSnapshot, 3648 × 2736 px." },
+          { src: tehran03, alt: "Street scene, Tehran", caption: "Bookan, 2022.\nSnapshot, 3648 × 2736 px." },
+          { src: tehran04, alt: "Street scene, Tehran", caption: "Tajrish Square, 2022.\nSnapshot, 3648 × 2736 px." },
+          { src: tehran05, alt: "Alley with graffiti and a painted door, Tehran", caption: "Fereshteh, 2022.\nSnapshot, 3648 × 2736 px." },
+          { src: tehran06, alt: "Skyscrapers and a busy intersection, Tehran", caption: "Arjantin, 2023.\nSnapshot, 3648 × 2736 px." },
         ],
       },
       {
