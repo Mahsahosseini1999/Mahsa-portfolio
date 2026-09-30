@@ -88,7 +88,7 @@ const jobs = [
   {
     slug: "becoming-soil-cover",
     dir: path.join(ROOT, "Becoming Soil ", "lutous "),
-    files: ["IMG_0909.jpg"],
+    files: ["cover .jpg"],
   },
   {
     slug: "becoming-soil-wind-will-carry",
