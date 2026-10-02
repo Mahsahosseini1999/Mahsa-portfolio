@@ -1,13 +1,23 @@
+import Link from "next/link";
+
 export default function HomeFooter() {
   return (
     <footer className="border-t border-ink/10 px-5 py-10 text-center sm:px-8 lg:px-12">
       <p className="text-sm text-ink-soft">Groningen, Netherlands</p>
-      <a
-        href="mailto:Hosseiniii.mahsaa@gmail.com"
-        className="mt-2 inline-block text-sm underline decoration-ink/30 underline-offset-4 hover:decoration-accent hover:text-accent transition-colors"
-      >
-        Hosseiniii.mahsaa@gmail.com
-      </a>
+      <div className="mt-2 flex items-center justify-center gap-5 text-sm">
+        <Link
+          href="/cv"
+          className="underline decoration-ink/30 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+        >
+          CV
+        </Link>
+        <Link
+          href="/contact"
+          className="underline decoration-ink/30 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+        >
+          Contact
+        </Link>
+      </div>
       <div className="mt-4 flex items-center justify-center gap-4">
         <a
           href="https://on.soundcloud.com/lIrFovyiY4OGvQjVDy"

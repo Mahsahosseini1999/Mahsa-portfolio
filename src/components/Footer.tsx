@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const notes = [
@@ -40,12 +41,12 @@ export default function Footer({ theme }: { theme?: FooterTheme }) {
         </div>
 
         <div className="flex flex-col items-start gap-3 text-sm sm:items-end">
-          <a
-            href="mailto:Hosseiniii.mahsaa@gmail.com"
+          <Link
+            href="/contact"
             className="underline decoration-ink/30 underline-offset-4 hover:decoration-accent hover:text-accent transition-colors"
           >
-            Hosseiniii.mahsaa@gmail.com
-          </a>
+            Contact
+          </Link>
           <div className="flex items-center gap-4">
             <a
               href="https://on.soundcloud.com/lIrFovyiY4OGvQjVDy"

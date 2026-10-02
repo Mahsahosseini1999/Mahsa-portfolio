@@ -1,4 +1,5 @@
 import Link from "next/link";
+import StatementPopup from "@/components/StatementPopup";
 
 export default function BioSection() {
   return (
@@ -22,7 +23,10 @@ export default function BioSection() {
         </p>
         <p>Her mind is sometimes chaos; her room never is.</p>
         <p>She makes things. Collects materials. Gets obsessed with stuff. Changes her mind.</p>
-        <p>There is probably a more professional way to explain all of this.</p>
+        <p>
+          There is probably a more professional way to explain all of this.
+          <StatementPopup />
+        </p>
       </div>
     </section>
   );

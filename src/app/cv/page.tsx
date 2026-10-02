@@ -2,15 +2,8 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "CV / Statement — Mahsa Hosseini",
+  title: "CV — Mahsa Hosseini",
 };
-
-const statement = [
-  "I am interested in what our actions leave behind, in the earth, on nonhumans and on humans. I work across drawing, installation, video, sound and photography, selecting the medium by intuition and by the physical and sensory conditions each project asks for.",
-  "I am developing a practice of close observation and responsiveness to what materials do. I try to let go of control. Wind and mold have changed my works, and I let those changes become part of them.",
-  "My process is slow and repeated. I drew the same pregnant body again and again. During the exhibition “I Myself Grew From This Murky Soil,” I watered the soil almost every hour. Through these repeated acts I make rituals of my own.",
-  "I want the audience to do more than look.",
-];
 
 const education = [
   {
@@ -82,13 +75,46 @@ const residencies = [
   },
 ];
 
+const scholarships = [
+  {
+    title: "Hanze Scholarship",
+    detail: "Hanze University of Applied Sciences, Groningen",
+    years: "2025/26",
+  },
+  {
+    title: "NL Scholarship",
+    detail:
+      "Dutch Ministry of Education, Culture and Science and Hanze University of Applied Sciences",
+    years: "2024/25",
+  },
+];
+
 const workshops = [
+  {
+    title:
+      "Specialized Online Workshop: Curatorial Studies – Introduction to Contemporary Curatorial Principles",
+    instructor: "Organized by Maryam Majd Art Projects (mm.artprojects)",
+    years: "2026",
+  },
+  {
+    title:
+      "Specialized Online Workshop: Art Project Management – From Idea to Execution, Documentation, and Evaluation",
+    instructor: "Organized by Maryam Majd Art Projects (mm.artprojects)",
+    years: "2026",
+  },
   {
     title: "Landscape Crafting",
     instructor: "Led by Holy Dale and Willie Vogel",
     years: "2025",
   },
 ];
+
+const workshopsAndTraining: {
+  title: string;
+  subtitle?: string;
+  instructor: string;
+  years: string;
+}[] = [...workshops, ...training];
 
 const exhibitions = [
   {
@@ -130,62 +156,30 @@ export default function CvPage() {
   return (
     <>
       <main className="mx-auto w-full max-w-4xl px-3 pt-24 pb-20 sm:px-5 lg:px-6">
-        <h1 className="font-display text-[clamp(2.5rem,7vw,4.5rem)]">CV / Statement</h1>
+        <h1 className="font-display text-[clamp(2.5rem,7vw,4.5rem)]">CV</h1>
 
-        <div className="mt-16">
-          <h2 className="font-display text-3xl">Statement</h2>
-          <div className="mt-6 flex max-w-[72ch] flex-col gap-4 text-lg leading-relaxed">
-            {statement.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
+        <div className="mt-8 flex flex-col gap-1 text-lg">
+          <span className="font-medium">Mahsa Hosseini</span>
+          <span className="text-base text-ink-soft">Groningen, Netherlands</span>
         </div>
 
         <div className="mt-16">
-          <h2 className="font-display text-3xl">Education</h2>
-          <div className="mt-6 flex flex-col gap-6">
-            {education.map((e) => (
-              <div key={e.school} className="flex flex-col gap-0.5">
+          <h2 className="font-display text-3xl">Group Exhibitions</h2>
+          <p className="mt-1 text-base text-ink-soft">Selected</p>
+          <div className="mt-6 flex flex-col gap-5">
+            {exhibitions.map((e) => (
+              <div key={e.title} className="flex flex-col gap-0.5">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <span className="font-medium text-lg">{e.school}</span>
+                  <span className="font-medium text-lg">{e.title}</span>
                   <span className="text-base text-ink-soft">{e.years}</span>
                 </div>
-                <span className="text-base text-ink-soft">{e.detail}</span>
+                {e.subtitle && <span className="font-medium text-lg">{e.subtitle}</span>}
+                <span className="text-base text-ink-soft">{e.place}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-12">
-          <h2 className="font-display text-3xl">Courses</h2>
-          <div className="mt-6 flex flex-col gap-4">
-            {courses.map((c) => (
-              <div key={c.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <span className="font-medium text-lg">{c.title}</span>
-                  <span className="text-base text-ink-soft">{c.years}</span>
-                </div>
-                <span className="text-base text-ink-soft">{c.instructor}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-12">
-          <h2 className="font-display text-3xl">Training</h2>
-          <div className="mt-6 flex flex-col gap-4">
-            {training.map((t) => (
-              <div key={t.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <span className="font-medium text-lg">{t.title}</span>
-                  <span className="text-base text-ink-soft">{t.years}</span>
-                </div>
-                {t.subtitle && <span className="font-medium text-lg">{t.subtitle}</span>}
-                <span className="text-base text-ink-soft">{t.instructor}</span>
-              </div>
-            ))}
-          </div>
-        </div>
 
         <div className="mt-12">
           <h2 className="font-display text-3xl">Experience</h2>
@@ -218,8 +212,10 @@ export default function CvPage() {
           </div>
         </div>
 
+
+
         <div className="mt-12">
-          <h2 className="font-display text-3xl">Residency</h2>
+          <h2 className="font-display text-3xl">Residencies</h2>
           <div className="mt-6 flex flex-col gap-4">
             {residencies.map((r) => (
               <div key={r.title} className="flex flex-col gap-0.5">
@@ -234,37 +230,76 @@ export default function CvPage() {
           </div>
         </div>
 
+
+
         <div className="mt-12">
-          <h2 className="font-display text-3xl">Workshop</h2>
+          <h2 className="font-display text-3xl">Scholarships</h2>
           <div className="mt-6 flex flex-col gap-4">
-            {workshops.map((w) => (
+            {scholarships.map((sc) => (
+              <div key={sc.title} className="flex flex-col gap-0.5">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                  <span className="font-medium text-lg">{sc.title}</span>
+                  <span className="text-base text-ink-soft">{sc.years}</span>
+                </div>
+                <span className="text-base text-ink-soft">{sc.detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+        <div className="mt-12">
+          <h2 className="font-display text-3xl">Education</h2>
+          <div className="mt-6 flex flex-col gap-6">
+            {education.map((e) => (
+              <div key={e.school} className="flex flex-col gap-0.5">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                  <span className="font-medium text-lg">{e.school}</span>
+                  <span className="text-base text-ink-soft">{e.years}</span>
+                </div>
+                <span className="text-base text-ink-soft">{e.detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+
+        <div className="mt-12">
+          <h2 className="font-display text-3xl">Workshops</h2>
+          <div className="mt-6 flex flex-col gap-4">
+            {workshopsAndTraining.map((w) => (
               <div key={w.title} className="flex flex-col gap-0.5">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <span className="font-medium text-lg">{w.title}</span>
                   <span className="text-base text-ink-soft">{w.years}</span>
                 </div>
+                {w.subtitle && (
+                  <span className="font-medium text-lg">{w.subtitle}</span>
+                )}
                 <span className="text-base text-ink-soft">{w.instructor}</span>
               </div>
             ))}
           </div>
         </div>
 
+
         <div className="mt-12">
-          <h2 className="font-display text-3xl">Exhibitions</h2>
-          <p className="mt-1 text-base text-ink-soft">Group</p>
-          <div className="mt-6 flex flex-col gap-5">
-            {exhibitions.map((e) => (
-              <div key={e.title} className="flex flex-col gap-0.5">
+          <h2 className="font-display text-3xl">Courses</h2>
+          <div className="mt-6 flex flex-col gap-4">
+            {courses.map((c) => (
+              <div key={c.title} className="flex flex-col gap-0.5">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <span className="font-medium text-lg">{e.title}</span>
-                  <span className="text-base text-ink-soft">{e.years}</span>
+                  <span className="font-medium text-lg">{c.title}</span>
+                  <span className="text-base text-ink-soft">{c.years}</span>
                 </div>
-                {e.subtitle && <span className="font-medium text-lg">{e.subtitle}</span>}
-                <span className="text-base text-ink-soft">{e.place}</span>
+                <span className="text-base text-ink-soft">{c.instructor}</span>
               </div>
             ))}
           </div>
         </div>
+
+
       </main>
       <Footer />
     </>
