@@ -5,10 +5,10 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 const statement = [
-  "I am interested in what our actions leave behind, in the earth, on nonhumans and on humans. I work across drawing, installation, video, sound and photography, selecting the medium by intuition and by the physical and sensory conditions each project asks for.",
-  "I am developing a practice of close observation and responsiveness to what materials do. I try to let go of control. Wind and mold have changed my works, and I let those changes become part of them.",
-  "My process is slow and repeated. I drew the same pregnant body again and again. During the exhibition “I Myself Grew From This Murky Soil,” I watered the soil almost every hour. Through these repeated acts I make rituals of my own.",
-  "I want the audience to do more than look.",
+  "I am interested in what our actions leave behind in the earth, on nonhumans, and on humans. I make drawings, installations, sound, video, and photographs about being alive in a world marked by violence and uncertainty, in a body that will die.",
+  "I work with soil and other natural materials because they open up ways of thinking beyond myself. Through them, I try to find my way back to the living systems I am already part of, and to understand myself better as one living thing among others. I start by getting close. I observe, collect, touch, and carry. My attempts to care for or understand those systems can involve taking something from them.",
+  "Repeating an action lets me feel and understand things that thinking alone cannot reach. Through these gestures, I make rituals of my own. I drew the same pregnant body again and again, and I drew every day for 40 days with turbah. I often begin without knowing exactly what I feel or think about a subject. Slowly, my relationship to it changes.",
+  "I decide on the routine, but not the outcome. Wind and mold have changed my works, and I let those changes stay. I am curious about what emerges when I leave room for things I cannot control.",
 ];
 
 export default function StatementPopup() {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { projects, getProject, type Section } from "@/data/projects";
+import { publishedProjects as projects, getProject, type Section } from "@/data/projects";
 import Footer from "@/components/Footer";
 import AnimatedTitle from "@/components/AnimatedTitle";
 import ArcTitle from "@/components/ArcTitle";
@@ -177,7 +177,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
 
           if (section.type === "intro") {
             nodes.push(
-              <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
+              <div key={i} className={`mx-auto flex w-full max-w-3xl flex-col gap-4${section.tight ? " -my-4" : ""}`}>
                 {section.body.map((p, j) => {
                   const link = section.links?.find((l) => p.includes(l.word));
                   if (!link) {
@@ -207,7 +207,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                   );
                 })}
                 {section.poem && (
-                  <div className="mt-2 flex flex-col gap-2">
+                  <div className="mt-8 flex flex-col gap-2">
                     {section.poem.lines.map((line, j) => (
                       <p
                         key={j}
@@ -295,7 +295,11 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                       className={`whitespace-pre-line text-lg ${
                         p.includes("\n") ? "leading-tight" : "leading-relaxed"
                       }`}
-                      style={titleColor ? { color: titleColor } : undefined}
+                      style={
+                        (section.bodyColor ?? titleColor)
+                          ? { color: section.bodyColor ?? titleColor }
+                          : undefined
+                      }
                     >
                       {p}
                     </p>

@@ -120,6 +120,7 @@ export type Section =
       body: string[];
       links?: { word: string; href: string; color?: string }[];
       poem?: { lines: string[]; color?: string };
+      tight?: boolean;
     }
   | {
       type: "heading";
@@ -130,6 +131,7 @@ export type Section =
       panelText?: string;
       lineColor?: string;
       titleColor?: string;
+      bodyColor?: string;
       hideWave?: boolean;
       poem?: { title?: string; lines: string[]; color?: string };
     }
@@ -186,6 +188,8 @@ export type Project = {
   arcTitle?: boolean;
   playfulGallery?: { src: StaticImageData; alt: string; caption?: string }[];
   hidden?: boolean;
+  // Offline: not listed, linked, or routable. Content stays here to republish later.
+  unpublished?: boolean;
 };
 
 export const projects: Project[] = [
@@ -206,13 +210,12 @@ export const projects: Project[] = [
         type: "intro",
         body: [
           "I came to soil through death.",
-          "I have been afraid of death since I was a child. My body felt strange to me, as if a thin layer of glass stood between me and the world, and under it was the awareness that bodies end.",
-          "When my grandfather died, I was eighteen. At Behesht Zahra, Tehran's central cemetery, I watched grief turn into procedure.",
-          "In 2024 my question began to shift from death itself to what happens to the body after it. Soil became the way to think it through. It is matter, and it is alive. Things break down in it and become something else. Maria Puig de la Bellacasa writes about “care time,” paying attention to what is already alive in the soil. I began to ask whether attention itself can be a form of care.",
-          "When the anxiety comes, I put my hands in soil, close my eyes and breathe. It does not erase the fear. It gives me somewhere to place it.",
-          "But my relationship with soil was also one of taking. I took it from graves and from my garden and carried it away in plastic bags. At Geertjesgolf, a sand extraction site, I stood on the machines and watched the land being separated and carried off to become roads and houses. My gestures were smaller, but they belonged to the same logic.",
-          "Donna Haraway asks us to stay with the trouble. This is where my work stays. Nothing is resolved.",
-          "I came to the soil to understand death. I stayed because it was teaching me how to stay alive, and how to live.",
+          "As a child, I felt a thin layer of glass between me and the world. I would stand in the shower and stare at my limbs. Under the glass was the knowledge that bodies end.",
+          "When my grandfather died, I was eighteen. At Behesht Zahra, Tehran’s central cemetery, I watched grief turn into procedure. At every burial I attended, the same verse was said: “We made you from soil; we will return you to this soil; we will raise you again from this soil.” (Quran 20:55, my translation.) I had always heard it as a prayer. I started to see it as a material process that my body will go through one day.",
+          "In 2024, my question shifted from what death is to what happens to the body after burial. Soil became the way to think it through. It is matter, and it is alive. Things break down in it and become something else.",
+          "When my hands were in the ground, the grip of the world loosened on me. I did not have to stop being afraid. I could stay with the soil, feeling it between my fingers, knowing things continued to grow.",
+          "I keep soil in my room. When the shaking starts, my hands go to it before I decide. I close my eyes and breathe. After ten to fifteen minutes, it lessens. But my relationship with soil was also one of taking. I took it from graves and from my garden and carried it away in plastic bags. At Geertjesgolf, a sand extraction site, I stood on the machines and watched the land being separated and carried off to become roads and houses. My gestures were smaller, but they belonged to the same logic. I was taking soil from one place and carrying it into another, treating it as if it were mine to move.",
+          "I came to soil to understand death. I stayed because working with it gave me a way to continue.",
         ],
       },
       {
@@ -220,7 +223,7 @@ export const projects: Project[] = [
         title: "Wind Will Carry",
         boxed: false,
         body: [
-          "This was the first work I made when I began researching death, and grief was part of it from the beginning.",
+          "This was the first work I made when I began researching death.",
           "I collected fallen autumn leaves and arranged them on an empty stone chair in the garden of Remonstrantse Kerk. Throughout the exhibition, I tended to them and kept the wind from scattering them. At the end, I sat on the ground beside the chair and watched the wind carry them away.",
           "I wonder where they are now. Perhaps they have already become soil.",
         ],
@@ -242,8 +245,8 @@ export const projects: Project[] = [
         title: "De-Compost",
         boxed: false,
         body: [
-          "At every burial I attended, the same verse was said: “We made you from soil; we will return you to this soil; we will raise you again from this soil.” (Quran 20:55, my translation.) Like “dust to dust,” I had always heard it as a prayer. I started to see it as a material process that my body will go through one day.",
-          "I collected small amounts of soil from the planted parts of graves in Groningen cemeteries and brought it to my studio. I added my own hair and nails and placed small samples under a microscope. The hair and nails stayed there as I watched, slowly mixing with the soil.",
+          "I collected small amounts of soil from the planted parts of graves in Groningen cemeteries and brought it to my studio. I added my hair and nails and placed small samples under a microscope, knowing it would take time for them to break down.",
+          "Maria Puig de la Bellacasa calls this kind of waiting “care time”: time that follows what is alive rather than what can be extracted. I began to ask whether attention itself can be a form of care.",
         ],
       },
       {
@@ -258,8 +261,8 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "I was looking for traces of life. Under the lens, I found tiny particles in many colors and shapes, but not the life I was looking for. It was there, I learned later, only too small for my microscope: microorganisms breaking things down and turning them into something new.",
-          "The soil was no longer only something that holds the dead. It was a living environment in itself, and things continue to grow in it.",
+          "I was looking for traces of life. Under the lens, I found tiny particles in many colors and shapes, but not the life I was looking for. It was there, only too small for my microscope: microorganisms breaking the matter down and feeding on it.",
+          "Soil was no longer only where the dead are kept; it was also where other lives continued.",
         ],
       },
       {
@@ -277,7 +280,9 @@ export const projects: Project[] = [
         title: "Radaye Siah",
         boxed: false,
         body: [
-          "A turbah is a small tablet of soil used in Shia prayer; you place your forehead on it during prostration. Mine came from Karbala, where turbahs are made in large numbers from soil taken from the shrine of Imam Hussain. I have eaten turbah since childhood, and I still do from time to time. I love its taste and smell.",
+          "A turbah is a small tablet of soil used in Shia prayer; you place your forehead on it during prostration. Mine came from Karbala, where turbahs are made in large numbers from soil taken from the shrine of Imam Hussain.",
+          "In my family, after prayer, they took a small bite. The body may already know. I have eaten turbah since childhood, and I still do from time to time. I love its taste and smell.",
+          "I began using it as a drawing material when I noticed the marks it left on paper; it worked almost like a dry pastel.",
         ],
       },
       {
@@ -292,8 +297,8 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "I began using it as a drawing material when I was wondering what I could make with it and noticed the marks it left on paper. It worked almost like a dry pastel.",
-          "Where I grew up, people wear black for 40 days after someone dies. I was experiencing the loss of my grandfather, and to me, each day had a shape. For 40 days, I drew with turbah on black cardboard: crying faces, graves, candles, mosques, and churches. I attached the drawings to black fabric and draped it like a chador over a female mannequin.",
+          "Where I grew up, people wear black for 40 days after someone dies.",
+          "I drew for 40 days, with turbah on black cardboard: crying faces, graves, candles, mosques, and churches. I attached the drawings to black fabric and draped it like a chador over a female mannequin.",
           "Making something every day became part of my practice. We live every day, and we die only once.",
         ],
       },
@@ -314,9 +319,9 @@ export const projects: Project[] = [
         title: "Storylines",
         boxed: false,
         body: [
-          "After the turbah drawings, I continued the daily practice of making, this time with soil from my garden, clay from a sand extraction site, and turbah. I worked on strips of paper, drawing trees and mountains with soil pigment. The strips already felt like storylines to me.",
-          "The soils came from very different places, but on paper they felt like one material. I was thinking about what could hold these different places together.",
-          "At first, I wove the strips together so their stories could meet. Later, I opened them up again, allowing each strip to exist on its own.",
+          "After the turbah drawings, I continued drawing every day, this time using soil from my garden, clay from a sand extraction site, and turbah. On strips of paper, I drew trees and mountains with soil pigment. The strips felt like storylines.",
+          "At first, I wove them together. Later, I opened them again, allowing each strip to exist on its own. I drew trees intuitively, thinking about how the dead become food for what grows. I drew mountains because I grew up beneath them, and there are none here in the Netherlands.",
+          "The daily process became meditative.",
         ],
       },
       {
@@ -333,8 +338,7 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "I drew trees intuitively, thinking about how the dead become food for what grows. I drew mountains because I grew up beneath them, and here in the Netherlands there are none.",
-          "The daily process became meditative. At the same time, I began questioning my own role in working with soil. Before I could use the garden soil, I left it on newspaper in the open air so the worms and insects living in it could find their way out. I was taking away their home. My attentiveness was not innocent.",
+          "Before I could use the garden soil, I left it on newspaper in the open air so the worms and insects living in it could find their way out. I was taking away their home. Then I washed the soil and separated the particles to reach the pigment. My attentiveness was not innocent.",
         ],
       },
       {
@@ -365,8 +369,8 @@ export const projects: Project[] = [
         title: "I Myself Grew From This Murky Soil.",
         boxed: false,
         body: [
-          "In my earlier works, I kept using processed, factory-made paper. I wanted a surface that could be in dialogue with the soil, something from the same family. While researching, I came across the lotus. The flower rises from the mud towards the sun and blooms without being stained by it. In Buddhism, it stands for purity and awakening. That was what drew me to it.",
-          "The leaves I use were harvested, dried and imported to the Netherlands. I bought them in an Asian store, and I am aware that I am buying something extracted. But when I put them in water, they soften and open again, almost as if they come back to a different kind of life. I give them another purpose, and a different way to end.",
+          "In my earlier works, I often used processed, factory-made paper. I was looking for a surface that could be in dialogue with the soil, belonging to the same material world. While researching, I came across the lotus. The flower rises from the mud towards the sun, and in Buddhism, it stands for purity and awakening. The symbolism behind the lotus drew me to it.",
+          "The lotus leaves I use are harvested, dried, and imported to the Netherlands. I bought them in an Asian store, aware that I was buying a material that had been taken from somewhere else. When I put the leaves in water, they soften and open again, a different kind of life.",
         ],
       },
       {
@@ -380,7 +384,7 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "At first, I treated them the way I had treated the black cardboard in the turbah drawings. I wanted to step away from man-made tools and the fine, controlled lines they leave, so I did not use scissors. I tore the leaves by hand into smaller pieces. I drew on them with soil and left them. I was putting mud back onto a plant known for staying clean of it. Mold appeared, the leaves dried, and the drawings slowly faded with them. The leaf became a skin, and the soil an imprint.",
+          "At first, I worked with the leaves as I had with the black cardboard in my turbah drawings, cutting them into shapes. Wanting to move away from the precise lines of manufactured tools, I tore the leaves by hand instead of using scissors. I drew on them with soil and left them to change. Mold appeared, the leaves dried, and the drawings gradually faded. The leaf became a skin; the soil left its imprint.",
         ],
       },
       {
@@ -402,8 +406,9 @@ export const projects: Project[] = [
       },
       {
         type: "intro",
+        tight: true,
         body: [
-          "In the next set, I covered the leaves with glycerin before drawing on them, as an act of preservation. They stayed well, with the drawings still on them.",
+          "In the next series, I covered the leaves with glycerin before drawing on them, trying to preserve them. The leaves remained intact, and the drawings stayed visible.",
         ],
       },
       {
@@ -424,7 +429,7 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "Then I began working with whole leaves. I drew on them with soil again, but this time I did not let them dry. I kept them moist so the mold could do more of the work. I was no longer letting go or holding on, but preparing the conditions. It became a collaboration between me, the soil, the water, and the mold. None of us is in full control.",
+          "Then I began working with whole leaves. But this time I did not let them dry. I kept them moist, allowing the mold to develop. Instead of trying to preserve the leaves or simply letting them decay, I began preparing the conditions in which these processes could unfold. The outcome was no longer entirely mine to determine. The soil, water, mold, and my own actions each played a part.",
         ],
       },
       {
@@ -441,7 +446,7 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "My graduation exhibition took place in the A-kerk, a church in Groningen. I made an installation: a square filled with soil, with lotus leaves arranged in a circle, from slightly fresher leaves to torn ones at the start of decay. In the middle of the garden soil, I placed cemetery soil, and during the exhibition, a small plant began to grow.\nThe installation was interactive. People could touch and play with the soil, and it held their imprints.\nNext to it were the stairs to the pulpit, a place visitors are usually not allowed to enter. This time, I was the one speaking: the soundscape and the poem.\nBy the end, the soil carried the traces of everyone who had played in it. Decay is not an end. It is transformation.",
+          "For my graduation exhibition, I made an installation in the A-kerk in Groningen. I filled a square with gardening soil and arranged lotus leaves in a circle, from fresher leaves to torn ones beginning to decay. Visitors could touch and play with the soil, leaving their imprints in it. Beside the installation were the stairs to the pulpit, a space usually closed to visitors. I used this space for a soundscape and a poem. By the end of the exhibition, the soil held traces of the people who had touched it.",
         ],
         links: [
           {
@@ -470,7 +475,7 @@ export const projects: Project[] = [
             "So that the me-ness in me may sever",
             "And reach to a we beyond",
           ],
-          color: "#4c1d95",
+          color: "#013961",
         },
       },
       {
@@ -509,7 +514,6 @@ export const projects: Project[] = [
           "Beneath every street we walk on lies the invisible work of the bodies that made the bricks and the hands that placed them in walls or on the ground. We move across these surfaces every day, but we rarely stop to consider the weight of that history beneath our feet.",
           "This raises the question: what does it mean to truly “get in touch” with a brick?",
           "By attaching bricks to the feet of a dancer, the material becomes an extension of the body. The brick meets the street and becomes a tool for marking and sounding the city. This work invites audiences to experience brick in a unique way through seeing and hearing. The dancer moves through the urban space and feels the weight and resistance of the bricks with every step. Moving takes effort. Grace becomes struggle.",
-          "With this work, Hosseini and Moschou aim to bring material and body closer together and let us feel what it means to carry bricks in another way.",
         ],
       },
       {
@@ -526,6 +530,7 @@ export const projects: Project[] = [
 
   {
     slug: "the-g-word",
+    unpublished: true,
     title: "The G Word",
     medium: "Drawing",
     blurb: "Guns, drawn in every color but the ones they come in.",
@@ -571,7 +576,7 @@ export const projects: Project[] = [
         type: "intro",
         body: [
           "In March 2025 I spent a week in residency at an e-waste recycling facility in the Netherlands, observing the process of separation and working one shift alongside the people who work there.",
-          "The so-called waste arrives when no one considers it useful or wants it anymore. It is separated into batches by what it is and what it is made of. Batteries are pulled aside because of the danger they pose. They are the only thing here still treated as capable of doing something.",
+          "The so-called waste arrives when no one considers it useful or wants it anymore. It is separated into batches by what it is and what it is made of. Batteries are pulled aside because of the danger they pose.",
           "What interested me was that objects at different points in technological time end up in the same batch. What a thing was for, and who it belonged to, stops being information here.",
           "We meet things in the middle of their lives. Where they are made, and what is taken out of the ground to make them, happens out of sight. What happens to them afterwards is out of sight again. This place is one of the few points where any of it is visible, and I saw only the separation.",
           "Working there became almost meditative after a while.",
@@ -594,16 +599,18 @@ export const projects: Project[] = [
         title: "Cable Man",
         boxed: false,
         lineColor: "#1c05a1",
+        bodyColor: "#000000",
         body: [
           "A human figure built entirely from discarded cables found at the facility.",
         ],
         poem: {
+          color: "#000000",
           lines: [
             "Drowning without noticing.",
-            "Cables are everywhere, not always visible but they surround me.",
+            "Cables are everywhere, not always visible, but they surround me.",
             "The world is vast and fast.",
-            "The more I look the more I stoop into it and it easily drowns me.",
-            "a black hole filled with data.",
+            "The more I look, the more I stoop into it, and it easily drowns me.",
+            "A black hole filled with data.",
           ],
         },
       },
@@ -654,9 +661,10 @@ export const projects: Project[] = [
       {
         type: "intro",
         body: [
-          "I have never been pregnant or given birth. This series began from curiosity, not experience. What I know comes from growing up in a large family, from the joy I felt around newborns, and from my fascination with what happens to a body while it is making another body.",
-          "Cells develop inside another person and slowly become someone who can live alone. I watched footage of caesarean sections and vaginal births, looking directly at the moment those nine months end and a lifetime begins. A head comes out of a vagina. My body shivers every time I watch it. I am drawn to it, and it unsettles me.",
-          "I kept drawing the same thing: a naked woman with a big pregnant belly, again and again, from different angles and in different colors. I never drew faces, because it was about the body itself. I also drew vulvas, because I still do not understand how a human comes out of such a small hole.",
+          "I have never been pregnant or given birth.",
+          "This series began from curiosity, not experience. What I know comes from growing up in a large family, from the joy I felt around newborns, and from my fascination with what happens to a body while it is making another body.",
+          "I watched footage of caesarean sections and vaginal births, looking directly at the moment those nine months end and a lifetime begins. A head comes out of a vagina. My body shivers every time I watch it. I am drawn to it, and it unsettles me.",
+          "I kept drawing the same thing: a naked pregnant woman, again and again, from different angles and in different colors. I never drew faces. I drew vulvas too, because I still do not understand how a human comes out of such a small hole.",
           "Will it be me one day?",
         ],
       },
@@ -683,6 +691,7 @@ export const projects: Project[] = [
 
   {
     slug: "interrelation",
+    unpublished: true,
     title: "Interrelation",
     medium: "Photography, sculpture, video",
     blurb: "A city, a set of chairs, a dance — three studies in connection.",
@@ -791,7 +800,6 @@ export const projects: Project[] = [
           "In 2020 I photographed my friends with a Zenit. Birthdays, weekends, kitchens.",
           "I never waited for anything to happen. I just took photos.",
           "The camera was older than all of us. It missed focus. It let in too much light, or not enough. Whatever it gave back, I held onto.",
-          "What is left is ordinary life, half visible, and it does not sit still.",
         ],
       },
       {
@@ -850,6 +858,8 @@ export const projects: Project[] = [
 
 ];
 
+export const publishedProjects = projects.filter((p) => !p.unpublished);
+
 export function getProject(slug: string) {
-  return projects.find((p) => p.slug === slug);
+  return publishedProjects.find((p) => p.slug === slug);
 }

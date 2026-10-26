@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { publishedProjects } from "@/data/projects";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 type Trinket = {
@@ -39,7 +40,7 @@ function useIsDesktop() {
   return isDesktop;
 }
 
-const trinkets: Trinket[] = [
+const allTrinkets: Trinket[] = [
   {
     href: "/projects/interrelation",
     label: "Interrelation — a set of chairs",
@@ -208,6 +209,9 @@ const trinkets: Trinket[] = [
     ),
   },
 ];
+
+const publishedHrefs = new Set(publishedProjects.map((p) => `/projects/${p.slug}`));
+const trinkets = allTrinkets.filter((t) => publishedHrefs.has(t.href));
 
 export default function HomeScene() {
   const ref = useRef<HTMLDivElement>(null);
