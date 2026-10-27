@@ -137,6 +137,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
   return (
     <>
     <main
+      data-blend-photos={project.blendPhotos ? "" : undefined}
       className="w-full min-h-screen overflow-x-hidden pt-20 pb-16"
       style={themeStyle}
     >

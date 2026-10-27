@@ -62,3 +62,15 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Lets white photo backgrounds melt into the page colour. */
+[data-blend-photos] img {
+  mix-blend-mode: multiply;
+}
+[data-blend-photos] .bg-paper-deep {
+  background: transparent;
+}
+/* Animated groups isolate their children, so blend the group itself. */
+[data-blend-photos] .blend-group {
+  mix-blend-mode: multiply;
+}

@@ -184,6 +184,7 @@ export type Project = {
   sections: Section[];
   inProgress?: boolean;
   theme?: Theme;
+  blendPhotos?: boolean;
   animateTitle?: boolean;
   arcTitle?: boolean;
   playfulGallery?: { src: StaticImageData; alt: string; caption?: string }[];
@@ -195,13 +196,14 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "becoming-soil",
+    blendPhotos: true,
     title: "Becoming Soil",
     medium: "Installation, video, sound, drawing",
     blurb: "Death, grief, and our relation to nature — in several parts.",
     accent: "lavender",
     cover: becomingSoilCover,
     theme: {
-      bg: "#ffffff",
+      bg: "#fff9ed",
       text: "#013961",
       textSoft: "#4d7290",
     },

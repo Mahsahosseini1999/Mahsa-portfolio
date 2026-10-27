@@ -10,7 +10,7 @@ export default function StorylinesMarquee({ images }: { images: StripImage[] }) 
   const track = [...images, ...images];
 
   return (
-    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+    <div className="blend-group relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
       <motion.div
         className="flex items-center gap-1"
         animate={{ x: ["0%", "-50%"] }}
