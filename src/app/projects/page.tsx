@@ -30,8 +30,10 @@ export default function ProjectsPage() {
             style={{
               ["--accent" as string]:
                 project.slug === "becoming-soil"
-                  ? "#7c3aed"
-                  : (project.theme?.bg ?? accentVar[project.accent]),
+                  ? "#a8794a"
+                  : project.slug === "where-it-ends-up"
+                    ? "#fcd7e0"
+                    : (project.theme?.bg ?? accentVar[project.accent]),
             }}
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-ink/15 bg-paper-deep">

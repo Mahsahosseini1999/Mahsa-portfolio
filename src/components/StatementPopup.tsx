@@ -56,7 +56,7 @@ export default function StatementPopup() {
               role="dialog"
               aria-modal="true"
               aria-label="Statement"
-              className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-sm border border-ink/20 bg-paper p-6 text-left font-sans shadow-xl sm:p-10"
+              className="relative max-h-[94vh] w-full max-w-2xl overflow-y-auto rounded-sm border border-ink/20 bg-paper p-5 text-left font-sans shadow-xl sm:px-10 sm:py-8"
               initial={{ y: 16, scale: 0.98 }}
               animate={{ y: 0, scale: 1 }}
               exit={{ y: 16, scale: 0.98 }}
@@ -72,7 +72,7 @@ export default function StatementPopup() {
                 &times;
               </button>
               <h2 className="font-display text-3xl">Statement</h2>
-              <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed sm:text-lg">
+              <div className="mt-4 flex flex-col gap-3 text-[clamp(0.875rem,2.3vh,1.125rem)] leading-relaxed">
                 {statement.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
