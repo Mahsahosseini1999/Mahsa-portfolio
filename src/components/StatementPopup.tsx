@@ -35,7 +35,7 @@ export default function StatementPopup() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="mx-auto mt-3 block text-[#ffd400] underline decoration-[#ffd400] underline-offset-4 [text-shadow:0_1px_0_#013961,0_-1px_0_#013961,1px_0_0_#013961,-1px_0_0_#013961] transition-colors hover:text-[#fff3a0]"
+        className="mx-auto mt-3 block text-[#013961] underline decoration-[#013961] underline-offset-4 transition-opacity hover:opacity-70"
       >
         Click to see the statement.
       </button>

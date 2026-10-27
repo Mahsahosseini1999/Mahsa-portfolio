@@ -5,7 +5,7 @@ import HomeFooter from "@/components/HomeFooter";
 
 export default function Home() {
   return (
-    <div className="bg-[#d6c9f2]">
+    <div className="bg-[#fff3c4]">
       <HomeScene />
       <BioSection />
       <section className="px-5 pb-16 sm:px-8 lg:px-12">
