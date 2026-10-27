@@ -655,7 +655,7 @@ export const projects: Project[] = [
     accent: "indigo",
     cover: aob05,
     theme: {
-      bg: "#fcd7e0",
+      bg: "#e3dbf7",
       text: "#013961",
       textSoft: "#4d7290",
     },
