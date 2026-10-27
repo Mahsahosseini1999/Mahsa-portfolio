@@ -231,33 +231,10 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
             const tint = headingCount % 2 === 0 ? "bg-accent/8" : "bg-accent/[0.14]";
             const tilt = headingCount % 2 === 0 ? "-rotate-1" : "rotate-1";
             const boxed = section.boxed !== false;
-            const wave = (
-              <div className="w-[112%] -ml-[6%]">
-                <svg
-                  viewBox="0 0 340 14"
-                  preserveAspectRatio="none"
-                  className="h-3 w-full"
-                  style={{ color: section.lineColor ?? undefined }}
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 7c9-9 18 9 27 0s18-9 27 0 18 9 27 0 18-9 27 0 18 9 27 0 18-9 27 0 18 9 27 0 18-9 27 0 18 9 27 0 18-9 27 0 18 9 27 0"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    vectorEffect="non-scaling-stroke"
-                    className={section.lineColor ? undefined : "text-accent"}
-                  />
-                </svg>
-              </div>
-            );
-
             const nextSection = project.sections[i + 1];
             if (boxed && section.panelBg && nextSection?.type === "gallery") {
               nodes.push(
                 <div key={i} className="flex flex-col gap-4">
-                  {!section.hideWave && wave}
                   <div
                     className="flex flex-col gap-8 rounded-2xl px-7 py-10 sm:px-12 sm:py-14"
                     style={{ background: section.panelBg, color: section.panelText }}
@@ -282,7 +259,6 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
               const titleColor = section.titleColor ?? section.lineColor;
               nodes.push(
                 <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
-                  {!section.hideWave && wave}
                   <h2
                     className={`font-display text-3xl ${titleColor ? "" : "text-accent"}`}
                     style={titleColor ? { color: titleColor } : undefined}
@@ -332,7 +308,6 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
 
             nodes.push(
               <div key={i} className="mx-auto flex w-full max-w-3xl flex-col gap-4">
-                {!section.hideWave && wave}
                 <div
                   className={`flex flex-col gap-3 rounded-2xl ${tilt} px-6 py-8 sm:px-9 ${
                     section.panelBg ? "" : tint
