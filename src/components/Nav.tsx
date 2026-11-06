@@ -43,7 +43,7 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
-          className="fixed top-5 left-5 sm:top-7 sm:left-7 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-ink/20 bg-paper/90 backdrop-blur-sm shadow-[0_2px_10px_rgba(51,38,43,0.08)] transition-transform hover:-rotate-6"
+          className="fixed top-5 left-5 sm:top-7 sm:left-7 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-ink/40 bg-paper shadow-[0_2px_10px_rgba(51,38,43,0.25)] transition-transform hover:-rotate-6"
         >
           <span className="sr-only">Menu</span>
           <span className="relative flex h-4 w-5 flex-col justify-between">
