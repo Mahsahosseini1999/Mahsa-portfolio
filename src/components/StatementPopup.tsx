@@ -5,10 +5,9 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 const statement = [
-  "I am interested in what our actions leave behind in the earth, on nonhumans, and on humans. I make drawings, installations, sound, video, and photographs about being alive in a world marked by violence and uncertainty, in a body that will die.",
-  "I work with soil and other natural materials because they open up ways of thinking beyond myself. Through them, I try to find my way back to the living systems I am already part of, and to understand myself better as one living thing among others. I start by getting close. I observe, collect, touch, and carry. My attempts to care for or understand those systems can involve taking something from them.",
-  "Repeating an action lets me feel and understand things that thinking alone cannot reach. Through these gestures, I make rituals of my own. I drew the same pregnant body again and again, and I drew every day for 40 days with turbah. I often begin without knowing exactly what I feel or think about a subject. Slowly, my relationship to it changes.",
-  "I decide on the routine, but not the outcome. Wind and mold have changed my works, and I let those changes stay. I am curious about what emerges when I leave room for things I cannot control.",
+  "My practice moves between the body and the soil. In a world marked by violence and uncertainty, I am interested in what our actions leave behind in the earth, on nonhumans, and on humans. I came to soil through death, and to burial as a material process my body will go through one day. Soil is matter, and it is alive; things break down in it and become something else.",
+  "Through working with soil, I try to find my way back to the living systems my body belongs to. I start by getting close. I observe, collect, touch, and carry. I draw with soil on paper and lotus leaves, record sounds, and translate the process into installation, video, and photography. I take soil from the places my research leads me to. My attentiveness is not innocent, which leads me to ask: can attention alone be a form of care?",
+  "Repetition is my method, a self-made ritual. I drew the pregnant body again and again, and drew with turbah, a soil I have eaten since childhood, every day for 40 days. I set the routine and let go of the outcome. Wind, water, mold, and the failures of an old camera change the work, and I keep what they change.",
 ];
 
 export default function StatementPopup() {
