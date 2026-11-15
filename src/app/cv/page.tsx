@@ -14,7 +14,7 @@ const education = [
   {
     school: "Tehran University of Art",
     detail: "Handicrafts, Bachelor",
-    years: "2018–2021",
+    years: "2018–2022",
   },
 ];
 
