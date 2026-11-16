@@ -468,7 +468,7 @@ export const projects: Project[] = [
             "But I do not",
             "How am I to live",
             "Caught between a bomb-raining superpower",
-            "and a gun-wielding dictator?",
+            "and a gun-wielding dictator",
             "The sun behind a cloud does not deny its existence",
             "Light is there, but only for the chosen ones",
             "I turn to my body",
