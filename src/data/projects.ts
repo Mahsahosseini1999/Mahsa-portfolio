@@ -247,7 +247,7 @@ export const projects: Project[] = [
         title: "De-Compost",
         boxed: false,
         body: [
-          "I collected small amounts of soil from the planted parts of graves in Groningen cemeteries and brought it to my studio. I added my hair and nails and placed small samples under a microscope, knowing it would take time for them to break down.",
+          "In two cemeteries close to where I live in Groningen, I took small amounts of soil from the planted parts of graves and brought it back to my studio. I added my hair and nails and placed small samples under a microscope, knowing it would take time for them to break down.",
           "Maria Puig de la Bellacasa calls this kind of waiting “care time”: time that follows what is alive rather than what can be extracted. I began to ask whether attention itself can be a form of care.",
         ],
       },

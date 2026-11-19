@@ -1,0 +1,5 @@
+export const statement = [
+  "My practice moves between the body and the soil. In a world marked by violence and uncertainty, I am interested in what our actions leave behind in the earth, on nonhumans, and on humans. I came to soil through death, and to burial as a material process my body will go through one day. Soil is matter, and it is alive; things break down in it and become something else.",
+  "Through working with soil, I try to find my way back to the living systems my body belongs to. I start by getting close. I observe, touch, and carry. I draw with soil on paper and lotus leaves, record sounds, and translate the process into installation, video, and photography. I take soil from the places my research leads me to. My attentiveness is not innocent.",
+  "Repetition is my method, a self-made ritual. I drew the pregnant body again and again, and drew with turbah, a soil I have eaten since childhood, every day for 40 days. I set the routine and let go of the outcome. Wind, water, mold, and the failures of an old camera change the work, and I keep what they change.",
+];

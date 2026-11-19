@@ -1,13 +1,17 @@
 import HomeScene from "@/components/HomeScene";
+import HomeTitle from "@/components/HomeTitle";
 import BioSection from "@/components/BioSection";
 import DrawingCanvas from "@/components/DrawingCanvas";
+import StatementSection from "@/components/StatementSection";
 import HomeFooter from "@/components/HomeFooter";
 
 export default function Home() {
   return (
     <div className="bg-[#fff3c4]">
-      <HomeScene />
+      <HomeTitle />
       <BioSection />
+      <HomeScene />
+      <StatementSection />
       <section className="px-5 pb-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl sm:text-4xl">Draw something</h2>

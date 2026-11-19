@@ -1,9 +1,8 @@
 import Link from "next/link";
-import StatementPopup from "@/components/StatementPopup";
 
 export default function BioSection() {
   return (
-    <section id="about" className="mx-auto w-full max-w-2xl px-5 pb-16 sm:px-8 lg:px-12">
+    <section id="about" className="mx-auto w-full max-w-2xl px-5 pb-10 pt-10 sm:px-8 sm:pt-12 lg:px-12">
       <div className="flex flex-col gap-4 text-justify font-display text-lg leading-snug sm:text-xl">
         <p>You have somehow ended up here.</p>
         <p>
@@ -25,7 +24,6 @@ export default function BioSection() {
         <p>She makes things. Collects materials. Gets obsessed with stuff. Changes her mind.</p>
         <p>
           There is probably a more professional way to explain all of this.
-          <StatementPopup />
         </p>
       </div>
     </section>
