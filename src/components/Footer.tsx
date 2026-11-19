@@ -17,7 +17,7 @@ type FooterTheme = {
   textSoft: string;
 };
 
-export default function Footer({ theme }: { theme?: FooterTheme }) {
+export default function Footer({ theme, showCv }: { theme?: FooterTheme; showCv?: boolean }) {
   const [noteIndex, setNoteIndex] = useState<number | null>(null);
 
   const style = theme
@@ -41,12 +41,22 @@ export default function Footer({ theme }: { theme?: FooterTheme }) {
         </div>
 
         <div className="flex flex-col items-start gap-3 text-sm sm:items-end">
-          <Link
-            href="/contact"
-            className="underline decoration-ink/30 underline-offset-4 hover:decoration-accent hover:text-accent transition-colors"
-          >
-            Contact
-          </Link>
+          <div className="flex items-center gap-5">
+            {showCv && (
+              <Link
+                href="/cv"
+                className="underline decoration-ink/30 underline-offset-4 hover:decoration-accent hover:text-accent transition-colors"
+              >
+                CV
+              </Link>
+            )}
+            <Link
+              href="/contact"
+              className="underline decoration-ink/30 underline-offset-4 hover:decoration-accent hover:text-accent transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://on.soundcloud.com/lIrFovyiY4OGvQjVDy"

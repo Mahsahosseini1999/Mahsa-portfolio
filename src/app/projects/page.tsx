@@ -64,7 +64,7 @@ export default function ProjectsPage() {
         ))}
       </div>
     </main>
-    <Footer />
+    <Footer showCv />
     </>
   );
 }
