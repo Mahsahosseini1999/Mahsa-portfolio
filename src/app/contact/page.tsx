@@ -14,7 +14,7 @@ export default function ContactPage() {
 
         <ContactForm />
       </main>
-      <Footer />
+      <Footer showCv hideContact />
     </>
   );
 }
