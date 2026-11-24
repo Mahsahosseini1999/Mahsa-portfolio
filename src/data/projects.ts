@@ -35,6 +35,8 @@ import ppt10 from "@/assets/work/people-places-time/10.jpg";
 
 import brickBallet01 from "@/assets/work/brick-ballet/01.jpg";
 import ewaste01 from "@/assets/work/where-it-ends-up/01.jpg";
+import underConstructionStill from "@/assets/work/under-construction/01.jpg";
+import underConstructionInstallation from "@/assets/work/under-construction/02.jpg";
 
 import cableMan01 from "@/assets/work/cable-man/01.jpg";
 import cableMan02 from "@/assets/work/cable-man/02.jpg";
@@ -153,6 +155,7 @@ export type Section =
       href?: string;
       linkLabel?: string;
       showPlayIcon?: boolean;
+      imageLink?: boolean;
       caption?: string;
       captionColor?: string;
       size?: "lg";
@@ -496,6 +499,54 @@ export const projects: Project[] = [
     ],
   },
 
+  {
+    slug: "under-construction",
+    title: "Under Construction",
+    medium: "Video",
+    blurb: "Construction work in the city, filmed for an urban arts tour in Groningen.",
+    accent: "indigo",
+    cover: underConstructionStill,
+    sections: [
+      {
+        type: "intro",
+        body: [
+          "For the Urban Arts Tour: Work in Progress, organised by WHIRL Productions during Let’s Gro, a festival imagining Groningen’s future, the word “building” came to mind, so I filmed construction work in the city. The machines dig up the ground, move the soil around, put it in a container, and fill the ground with concrete to build infrastructure for human life and convenience.",
+        ],
+      },
+      {
+        type: "video",
+        still: underConstructionStill,
+        alt: "Excavator machine moving soil on a construction site",
+        href: "https://youtu.be/ThSjBthfe68?si=PjabOmzIVjMmVODo",
+        linkLabel: "Watch Under Construction",
+        showPlayIcon: false,
+        caption: "Under Construction, 2026. Video, 3:06.",
+        captionColor: "#1c05a1",
+        size: "lg",
+      },
+      {
+        type: "intro",
+        body: [
+          "During the tour, I showed the video Under Construction projected on a wall in the Forum and asked the participants:",
+          "When was the last time you touched bare soil with your hands?",
+          "Do you think the soil inside a construction container is alive?",
+          "Imagine how a city would look if both humans and non-humans lived in it.",
+        ],
+      },
+      {
+        type: "video",
+        still: underConstructionInstallation,
+        alt: "Under Construction video projected on a wall inside the Forum, beside escalators",
+        href: "https://forum.nl/nl/agenda/film/urban-arts-tour-work-in-progress",
+        linkLabel: "Link to Let’s Gro",
+        imageLink: false,
+        showPlayIcon: false,
+        caption: "Under Construction, 2026, Installation view",
+        captionColor: "#1c05a1",
+        size: "lg",
+      },
+    ],
+  },
   {
     slug: "brick-ballet",
     title: "Brick Ballet",

@@ -168,6 +168,11 @@ const jobs = [
     ],
   },
   {
+    slug: "under-construction",
+    dir: path.join(ROOT, "under construction"),
+    files: ["video still.png", "installation view.png"],
+  },
+  {
     slug: "one-piece",
     dir: path.join(ROOT, "one piece darwings "),
     files: ["img5.jpg", "img11.jpg", "img15.jpg", "img19.jpg", "img23.jpg"],
@@ -175,7 +180,8 @@ const jobs = [
 ];
 
 async function run() {
-  for (const job of jobs) {
+  const only = process.argv[2];
+  for (const job of jobs.filter((j) => !only || j.slug === only)) {
     const outDir = path.join(OUT, job.slug);
     fs.mkdirSync(outDir, { recursive: true });
     let i = 0;

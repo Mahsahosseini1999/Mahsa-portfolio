@@ -64,6 +64,14 @@ const allTrinkets: Trinket[] = [
     ),
   },
   {
+    href: "/projects/under-construction",
+    label: "Under Construction — a road works sign",
+    title: "Under Construction",
+    node: (
+      <Image src="/icons/under-construction.jpg" alt="" width={700} height={500} sizes="11rem" className="h-full w-full object-contain" />
+    ),
+  },
+  {
     href: "/projects/becoming-soil",
     label: "In the Ground — a sprout",
     title: "Becoming Soil",
@@ -86,6 +94,7 @@ const allTrinkets: Trinket[] = [
 const publishedHrefs = new Set(publishedProjects.map((p) => `/projects/${p.slug}`));
 const order = [
   "/projects/becoming-soil",
+  "/projects/under-construction",
   "/projects/brick-ballet",
   "/projects/where-it-ends-up",
   "/projects/arc-of-birth",

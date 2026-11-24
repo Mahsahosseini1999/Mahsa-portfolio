@@ -370,7 +370,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
                   section.size === "lg" ? "" : "mx-auto max-w-4xl"
                 }`}
               >
-                {section.href ? (
+                {section.href && section.imageLink !== false ? (
                   <a
                     href={section.href}
                     target={section.href.startsWith("http") ? "_blank" : undefined}
