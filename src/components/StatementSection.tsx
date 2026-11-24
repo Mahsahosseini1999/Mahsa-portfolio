@@ -6,7 +6,7 @@ export default function StatementSection() {
       <h2 className="font-display text-3xl sm:text-4xl">Statement</h2>
       <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed sm:text-lg">
         {statement.map((p, i) => (
-          <p key={i}>{p}</p>
+          <p key={i} className="whitespace-pre-line">{p}</p>
         ))}
       </div>
     </section>
