@@ -111,28 +111,28 @@ const trinkets = allTrinkets
 export default function HomeScene() {
   return (
     <section className="mx-auto w-full max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
-      <ul className="flex flex-wrap items-start justify-center gap-x-4 gap-y-10 sm:gap-x-8">
+      <ul className="mx-auto grid max-w-4xl grid-cols-3 items-start gap-x-3 gap-y-10 sm:gap-x-8">
         {trinkets.map((t, i) => (
           <motion.li
             key={t.href}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: "easeOut" }}
-            className="w-36 sm:w-44 lg:w-48"
+            className="min-w-0"
           >
             <Link
               href={t.href}
               aria-label={t.label}
-              className="group flex flex-col items-center gap-3 text-center"
+              className="group flex w-full flex-col items-center gap-3 text-center"
             >
               <motion.div
                 whileHover={{ rotate: 4, scale: 1.08 }}
                 transition={{ type: "spring", stiffness: 300, damping: 14 }}
-                className="flex h-32 w-32 items-center justify-center sm:h-40 sm:w-40 lg:h-44 lg:w-44 [&>img]:h-full [&>img]:w-full [&>svg]:h-full [&>svg]:w-full"
+                className="flex aspect-square w-full max-w-[12rem] items-center justify-center [&>img]:h-full [&>img]:w-full [&>svg]:h-full [&>svg]:w-full"
               >
                 {t.node}
               </motion.div>
-              <span className="font-display text-base leading-tight sm:text-lg">{t.title}</span>
+              <span className="font-display text-sm leading-tight sm:text-lg">{t.title}</span>
             </Link>
           </motion.li>
         ))}

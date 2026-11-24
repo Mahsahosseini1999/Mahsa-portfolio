@@ -118,6 +118,12 @@ const workshopsAndTraining: {
 
 const exhibitions = [
   {
+    title: "Urban Arts Tour: Work in Progress",
+    subtitle: "WHIRL Productions, Let’s Gro",
+    place: "Forum Groningen",
+    years: "7 November 2026",
+  },
+  {
     title: "29 Way Out",
     subtitle: "FMI Graduation Show",
     place: "A-Kerk, Groningen",
@@ -169,9 +175,9 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-5">
             {exhibitions.map((e) => (
               <div key={e.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">{e.title}</span>
-                  <span className="text-base text-ink-soft">{e.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{e.years}</span>
                 </div>
                 {e.subtitle && <span className="font-medium text-lg">{e.subtitle}</span>}
                 <span className="text-base text-ink-soft">{e.place}</span>
@@ -186,11 +192,11 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-8">
             {experience.map((e) => (
               <div key={e.role + e.place} className="flex flex-col gap-1">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">
                     {e.role} — {e.place}
                   </span>
-                  <span className="text-base text-ink-soft">{e.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{e.years}</span>
                 </div>
                 <ul className="flex flex-col gap-1 text-base text-ink-soft">
                   {e.detail.map((line, i) => (
@@ -219,9 +225,9 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-4">
             {residencies.map((r) => (
               <div key={r.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">{r.title}</span>
-                  <span className="text-base text-ink-soft">{r.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{r.years}</span>
                 </div>
                 <span className="text-base text-ink-soft">{r.instructor}</span>
                 <span className="text-base text-ink-soft">{r.place}</span>
@@ -237,9 +243,9 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-4">
             {scholarships.map((sc) => (
               <div key={sc.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">{sc.title}</span>
-                  <span className="text-base text-ink-soft">{sc.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{sc.years}</span>
                 </div>
                 <span className="text-base text-ink-soft">{sc.detail}</span>
               </div>
@@ -253,9 +259,9 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-6">
             {education.map((e) => (
               <div key={e.school} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">{e.school}</span>
-                  <span className="text-base text-ink-soft">{e.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{e.years}</span>
                 </div>
                 <span className="text-base text-ink-soft">{e.detail}</span>
               </div>
@@ -270,9 +276,9 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-4">
             {workshopsAndTraining.map((w) => (
               <div key={w.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">{w.title}</span>
-                  <span className="text-base text-ink-soft">{w.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{w.years}</span>
                 </div>
                 {w.subtitle && (
                   <span className="font-medium text-lg">{w.subtitle}</span>
@@ -289,9 +295,9 @@ export default function CvPage() {
           <div className="mt-6 flex flex-col gap-4">
             {courses.map((c) => (
               <div key={c.title} className="flex flex-col gap-0.5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <div className="flex items-baseline justify-between gap-x-6">
                   <span className="font-medium text-lg">{c.title}</span>
-                  <span className="text-base text-ink-soft">{c.years}</span>
+                  <span className="shrink-0 whitespace-nowrap text-base text-ink-soft">{c.years}</span>
                 </div>
                 <span className="text-base text-ink-soft">{c.instructor}</span>
               </div>
